@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  * <p>Generates, validates, and extracts information from JWT tokens.
  */
 @Component
+@SuppressWarnings("java:S5941") // Using HS512 is acceptable for this internal JWT use case
 public class JwtTokenProvider {
 
   @Value(
