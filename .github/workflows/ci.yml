@@ -55,3 +55,43 @@ jobs:
         with:
           name: spotbugs-report
           path: target/spotbugsXml.xml
+
+  analysis:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 for analysis
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Run PMD and SpotBugs (JDK17)
+        run: |
+          mvn -B -DskipTests=true -Dspotbugs.skip=false -Dpmd.skip=false verify
+
+      - name: Upload PMD report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pmd-report
+          path: target/pmd.xml
+
+      - name: Upload spotbugs report (analysis)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spotbugs-report-analysis
+          path: target/spotbugsXml.xml

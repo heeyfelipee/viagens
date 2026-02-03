@@ -54,6 +54,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- JMH for microbenchmarks -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>1.36</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>1.36</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -63,17 +75,27 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+			<!-- JMH plugin to run microbenchmarks (profile 'bench') -->
+			<plugin>
+				<groupId>org.openjdk.jmh</groupId>
+				<artifactId>jmh-maven-plugin</artifactId>
+				<version>1.36</version>
+				<configuration>
+					<forks>1</forks>
+				</configuration>
+			</plugin>
+
 			<!-- Static analysis: SpotBugs -->
 			<plugin>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-maven-plugin</artifactId>
-				<version>4.7.3.0</version>
+				<version>4.7.3.2</version>
 				<configuration>
 					<effort>Max</effort>
 					<threshold>Low</threshold>
 					<failOnError>false</failOnError>
-					<!-- Skip SpotBugs on Java versions not yet supported by the analyzer -->
-					<skip>true</skip>
+					<!-- Temporarily enable SpotBugs execution locally for analysis run -->
+					<skip>false</skip>
 				</configuration>
 				<executions>
 					<execution>
@@ -89,11 +111,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.21.0</version>
+				<version>3.22.0</version>
 				<configuration>
 					<failOnViolation>false</failOnViolation>
-					<!-- Skip PMD for Java 21 until PMD supports classfile version 65 in this environment -->
-					<skip>true</skip>
+					<!-- Temporarily enable PMD execution locally for analysis run -->
+					<skip>false</skip>
 				</configuration>
 				<executions>
 					<execution>
