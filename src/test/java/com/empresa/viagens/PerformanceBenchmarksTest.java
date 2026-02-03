@@ -2,7 +2,7 @@ package com.empresa.viagens;
 
 import org.junit.jupiter.api.Test;
 
-public class PerformanceBenchmarks {
+public class PerformanceBenchmarksTest {
 
   @Test
   void stringConcatVsBuilder() {
