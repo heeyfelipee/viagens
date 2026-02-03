@@ -94,8 +94,8 @@
 					<effort>Max</effort>
 					<threshold>Low</threshold>
 					<failOnError>false</failOnError>
-					<!-- Temporarily enable SpotBugs execution locally for analysis run -->
-					<skip>false</skip>
+					<!-- Keep SpotBugs skipped by default for local JDK21 experience; CI/analysis job will run it under JDK17 -->
+					<skip>true</skip>
 				</configuration>
 				<executions>
 					<execution>
@@ -114,8 +114,8 @@
 				<version>3.22.0</version>
 				<configuration>
 					<failOnViolation>false</failOnViolation>
-					<!-- Temporarily enable PMD execution locally for analysis run -->
-					<skip>false</skip>
+					<!-- Keep PMD skipped by default for local JDK21 experience; CI/analysis job will run it under JDK17 -->
+					<skip>true</skip>
 				</configuration>
 				<executions>
 					<execution>
