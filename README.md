@@ -512,7 +512,7 @@ Este é um projeto **educacional aberto**. Contribuições, sugestões e feedbac
 
 - **Issues**: [GitHub Issues](../../issues)
 - **Discussions**: [GitHub Discussions](../../discussions)
-- **Email**: [seu-email@exemplo.com]
+- **Email**: [heeyfelipee@gmail.com]
 
 ---
 
