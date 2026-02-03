@@ -21,7 +21,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
  * <p>Processes JWT tokens from HTTP requests and sets up authentication in the security context.
  */
 @Component
-@SuppressWarnings("java:S110") // OncePerRequestFilter is appropriate for JWT filtering
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
   @Autowired private JwtTokenProvider jwtTokenProvider;

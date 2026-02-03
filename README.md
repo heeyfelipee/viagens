@@ -1,4 +1,4 @@
-# 🌍 Viagens - Sistema de Gestão de Viagens
+# Viagens - Sistema de Gestão de Viagens
 
 ![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=flat-square&logo=java)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.10-6DB33F?style=flat-square&logo=springboot)
@@ -6,11 +6,11 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue?style=flat-square)
 
-> **🎓 Projeto de Aprendizado Contínuo** - Este é um projeto educacional onde estou desenvolvendo competências em programação Java, arquitetura Spring Boot, inteligência artificial e práticas modernas de desenvolvimento.
+> ** Projeto de Aprendizado Contínuo** - Este é um projeto educacional onde estou desenvolvendo competências em programação Java, arquitetura Spring Boot, inteligência artificial e práticas modernas de desenvolvimento.
 
 ---
 
-## 📋 Sumário
+## Sumário
 
 - [Visão Geral](#visão-geral)
 - [Objetivo do Projeto](#objetivo-do-projeto)
@@ -28,7 +28,7 @@
 
 ---
 
-## 🎯 Visão Geral
+## Visão Geral
 
 **Viagens** é um sistema de gestão de viagens desenvolvido em **Java 17 com Spring Boot 3.5.10**. O projeto é um **estudo de caso prático** onde aplico conceitos de:
 
@@ -39,7 +39,7 @@
 - JPA/Hibernate ORM
 - Tratamento de exceções e validação
 
-🤖 **Inteligência Artificial e Machine Learning**
+ **Inteligência Artificial e Machine Learning**
 
 - Análise de dados de viagens
 - Recomendação de destinos
@@ -53,7 +53,7 @@
 - Paralelização de build (60% redução)
 - Cache estratégico
 
-🔒 **Qualidade de Código**
+ **Qualidade de Código**
 
 - Static analysis (PMD, SpotBugs, Checkstyle)
 - Code formatting (Spotless)
@@ -62,7 +62,7 @@
 
 ---
 
-## 🎓 Objetivo do Projeto
+## Objetivo do Projeto
 
 ### Aprendizagem Contínua em Foco
 
@@ -77,16 +77,16 @@ Este projeto é uma **plataforma de aprendizado prático** onde:
 ### Evolução Prevista
 
 ```bash
-📅 Fase 1 (atual): Core - CRUD de viagens, usuários, destinos
-📅 Fase 2: Analytics - Dashboard, relatórios, análise de dados
-📅 Fase 3: AI/ML - Recomendações, previsões, otimização
-📅 Fase 4: DevOps - Docker, Kubernetes, Observabilidade
-📅 Fase 5: Escalabilidade - Microserviços, API Gateway, Cache distribuído
+ Fase 1 (atual): Core - CRUD de viagens, usuários, destinos
+ Fase 2: Analytics - Dashboard, relatórios, análise de dados
+ Fase 3: AI/ML - Recomendações, previsões, otimização
+ Fase 4: DevOps - Docker, Kubernetes, Observabilidade
+ Fase 5: Escalabilidade - Microserviços, API Gateway, Cache distribuído
 ```bash
 
 ---
 
-## 🛠️ Stack Tecnológico
+## ️ Stack Tecnológico
 
 ### Backend
 
@@ -124,7 +124,7 @@ Este projeto é uma **plataforma de aprendizado prático** onde:
 
 ---
 
-## 💡 Benefícios da Arquitetura
+## Benefícios da Arquitetura
 
 ### 1. **Performance Otimizada** ⚡
 
@@ -149,14 +149,14 @@ Economia: 5 minutos por build = 60+ horas/ano em 300 builds
 
 **Benefício**: Menos falsos positivos, mais foco em bugs reais
 
-### 3. **Desenvolvimento Limpo** 🧹
+### 3. **Desenvolvimento Limpo** 
 
 - Code formatting automático
 - Estilo consistente
 - Documentação gerada automaticamente
 - Benchmarks para decisões data-driven
 
-### 4. **Escalabilidade Planejada** 📈
+### 4. **Escalabilidade Planejada** 
 
 - Arquitetura pronta para microserviços
 - Cache estratégico (Redis-ready)
@@ -165,7 +165,7 @@ Economia: 5 minutos por build = 60+ horas/ano em 300 builds
 
 ---
 
-## 📚 Funcionalidades
+## Funcionalidades
 
 ### ✅ Fase 1 (Atual)
 
@@ -190,87 +190,87 @@ Economia: 5 minutos por build = 60+ horas/ano em 300 builds
 - ✅ Preços e disponibilidade
 - ✅ Avaliações e reviews
 
-### 🚀 Fase 2 (Planejado)
+### Fase 2 (Planejado)
 
 **Analytics Dashboard**
 
-- 📊 Visualização de dados de viagens
-- 📈 Tendências de destinos populares
-- 💰 Análise de receita
-- 👥 Comportamento de usuários
+- Visualização de dados de viagens
+- Tendências de destinos populares
+- Análise de receita
+- Comportamento de usuários
 
-### 🤖 Fase 3 (Exploração)
+### Fase 3 (Exploração)
 
 **AI/ML Integration**
 
-- 🎯 Recomendação de destinos personalizados
-- 📍 Otimização de rotas de viagem
-- 💡 Previsão de demanda sazonal
-- 🔮 Análise de preferências de usuário
+- Recomendação de destinos personalizados
+- Otimização de rotas de viagem
+- Previsão de demanda sazonal
+- Análise de preferências de usuário
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+## ️ Arquitetura do Projeto
 
 ### Estrutura de Diretórios
 
 ```bash
 viagens/
 ├── src/
-│   ├── main/
-│   │   ├── java/com/empresa/viagens/
-│   │   │   ├── ViagensApplication.java       # Application entry point
-│   │   │   ├── JmhBenchmarks.java            # Performance benchmarks
-│   │   │   └── JmhStringJoinBenchmark.java   # String operation benchmarks
-│   │   └── resources/
-│   │       ├── application.properties         # Configuration
-│   │       ├── static/                        # Static resources
-│   │       └── templates/                     # Thymeleaf templates
-│   └── test/
-│       ├── java/com/empresa/viagens/
-│       │   ├── ViagensApplicationTests.java
-│       │   ├── PerformanceBenchmarks.java
-│       │   └── PerformanceBenchmarksTest.java
-│       └── resources/
+│ ├── main/
+│ │ ├── java/com/empresa/viagens/
+│ │ │ ├── ViagensApplication.java # Application entry point
+│ │ │ ├── JmhBenchmarks.java # Performance benchmarks
+│ │ │ └── JmhStringJoinBenchmark.java # String operation benchmarks
+│ │ └── resources/
+│ │ ├── application.properties # Configuration
+│ │ ├── static/ # Static resources
+│ │ └── templates/ # Thymeleaf templates
+│ └── test/
+│ ├── java/com/empresa/viagens/
+│ │ ├── ViagensApplicationTests.java
+│ │ ├── PerformanceBenchmarks.java
+│ │ └── PerformanceBenchmarksTest.java
+│ └── resources/
 ├── .github/
-│   └── workflows/
-│       └── ci.yml                             # CI/CD pipeline
-├── pom.xml                                    # Maven configuration
-├── pmd-ruleset.xml                            # PMD rules (40 rules)
-├── checkstyle-strict.xml                      # Checkstyle config
-├── QUICK-START.md                             # Quick setup guide
-├── DEVELOPMENT.md                             # Development guide
-├── PERFORMANCE-OPTIMIZATION.md                # Performance details
-└── README.md                                  # This file
+│ └── workflows/
+│ └── ci.yml # CI/CD pipeline
+├── pom.xml # Maven configuration
+├── pmd-ruleset.xml # PMD rules (40 rules)
+├── checkstyle-strict.xml # Checkstyle config
+├── QUICK-START.md # Quick setup guide
+├── DEVELOPMENT.md # Development guide
+├── PERFORMANCE-OPTIMIZATION.md # Performance details
+└── README.md # This file
 ```bash
 
 ### Padrões de Arquitetura
 
 ```bash
 ┌─────────────────────────────────────────────┐
-│          Presentation Layer                 │
-│  (REST Controllers, Request/Response)       │
+│ Presentation Layer │
+│ (REST Controllers, Request/Response) │
 └────────────────┬────────────────────────────┘
-                 │
+ │
 ┌────────────────▼────────────────────────────┐
-│          Application Layer                  │
-│  (Services, Business Logic, Validation)     │
+│ Application Layer │
+│ (Services, Business Logic, Validation) │
 └────────────────┬────────────────────────────┘
-                 │
+ │
 ┌────────────────▼────────────────────────────┐
-│          Data Layer                         │
-│  (JPA Repositories, Database Access)        │
+│ Data Layer │
+│ (JPA Repositories, Database Access) │
 └────────────────┬────────────────────────────┘
-                 │
+ │
 ┌────────────────▼────────────────────────────┐
-│          Persistence Layer                  │
-│  (Entities, Mapping, Transactions)          │
+│ Persistence Layer │
+│ (Entities, Mapping, Transactions) │
 └─────────────────────────────────────────────┘
 ```bash
 
 ---
 
-## 🚀 Como Começar
+## Como Começar
 
 ### Pré-requisitos
 
@@ -308,12 +308,12 @@ cd viagens
 ./mvnw spring-boot:run
 
 # 4. Acessar
-👉 http://localhost:8080
+ http://localhost:8080
 ```bash
 
 ---
 
-## 💻 Desenvolvimento Local
+## Desenvolvimento Local
 
 ### Setup de Desenvolvimento
 
@@ -339,22 +339,22 @@ cd viagens
 
 ```bash
 # Desenvolvimento
-./mvnw spring-boot:run                    # Executar aplicação
-./mvnw clean compile                      # Compilar
-./mvnw test                               # Testes unitários
+./mvnw spring-boot:run # Executar aplicação
+./mvnw clean compile # Compilar
+./mvnw test # Testes unitários
 
 # Análise de Qualidade
-./mvnw spotless:apply                     # Formato automático
-./mvnw checkstyle:check                   # Checkstyle
-./mvnw pmd:check                          # PMD analysis
-./mvnw spotbugs:spotbugs                  # SpotBugs
+./mvnw spotless:apply # Formato automático
+./mvnw checkstyle:check # Checkstyle
+./mvnw pmd:check # PMD analysis
+./mvnw spotbugs:spotbugs # SpotBugs
 
 # Performance
-./mvnw -DskipTests jmh:benchmark          # Executar benchmarks JMH
-./mvnw clean install -DskipTests          # Build rápido
+./mvnw -DskipTests jmh:benchmark # Executar benchmarks JMH
+./mvnw clean install -DskipTests # Build rápido
 
 # CI/CD Simulado (local)
-./mvnw clean verify                       # Simula CI pipeline completo
+./mvnw clean verify # Simula CI pipeline completo
 ```bash
 
 ### Configuração IDE
@@ -364,15 +364,15 @@ cd viagens
 ```json
 // settings.json
 {
-  "java.home": "/path/to/jdk17",
-  "maven.executable.path": "./mvnw",
-  "java.format.settings.url": "google_style.xml"
+ "java.home": "/path/to/jdk17",
+ "maven.executable.path": "./mvnw",
+ "java.format.settings.url": "google_style.xml"
 }
 ```bash
 
 ---
 
-## 📊 Benchmarks de Performance
+## Benchmarks de Performance
 
 ### Comparação: String Concatenation vs StringBuilder
 
@@ -380,11 +380,11 @@ cd viagens
 
 ```bash
 ┌──────────────────────────┬─────────────┬────────────┐
-│ Método                   │ Tempo (μs)  │ Velocidade │
+│ Método │ Tempo (μs) │ Velocidade │
 ├──────────────────────────┼─────────────┼────────────┤
-│ String Concatenation     │ 45,000+     │ 1x (baseline)  │
-│ StringBuilder             │ 45-60       │ 1000x+ MAIS RÁPIDO │
-│ StringBuilder + Capacity  │ 35-45       │ 1200x+ MAIS RÁPIDO │
+│ String Concatenation │ 45,000+ │ 1x (baseline) │
+│ StringBuilder │ 45-60 │ 1000x+ MAIS RÁPIDO │
+│ StringBuilder + Capacity │ 35-45 │ 1200x+ MAIS RÁPIDO │
 └──────────────────────────┴─────────────┴────────────┘
 ```bash
 
@@ -402,7 +402,7 @@ cd viagens
 
 ---
 
-## 🔄 Integração Contínua
+## Integração Contínua
 
 ### CI/CD Pipeline
 
@@ -410,27 +410,27 @@ cd viagens
 Jobs Paralelos (3 simultâneos):
 
 ┌─────────────────────────────────────────────┐
-│  BUILD (Java 17)                            │
-│  • Compile + Tests + Spotless               │
-│  • ~2-3 minutos                             │
+│ BUILD (Java 17) │
+│ • Compile + Tests + Spotless │
+│ • ~2-3 minutos │
 └────────────┬────────────────────────────────┘
-             │
-        ┌────┴────┐
-        │          │
-   ┌────▼──┐  ┌───▼─────┐
-   │QUALITY │  │ ANALYSIS│
-   │(JDK17) │  │(JDK17)  │
-   │        │  │         │
-   │• CSS   │  │• PMD    │
-   │• Format│  │• SpotBug│
-   └────┬───┘  └────┬────┘
-        │           │
-        └─────┬─────┘
-              │
-        ┌─────▼──────┐
-        │ SUMMARY    │
-        │ Valida OK  │
-        └────────────┘
+ │
+ ┌────┴────┐
+ │ │
+ ┌────▼──┐ ┌───▼─────┐
+ │QUALITY │ │ ANALYSIS│
+ │(JDK17) │ │(JDK17) │
+ │ │ │ │
+ │• CSS │ │• PMD │
+ │• Format│ │• SpotBug│
+ └────┬───┘ └────┬────┘
+ │ │
+ └─────┬─────┘
+ │
+ ┌─────▼──────┐
+ │ SUMMARY │
+ │ Valida OK │
+ └────────────┘
 
 Tempo Total: ~3 minutos (vs 8 min antes)
 Redução: 60% ⚡
@@ -440,7 +440,7 @@ Redução: 60% ⚡
 
 ---
 
-## 🎓 Roadmap de Aprendizado
+## Roadmap de Aprendizado
 
 ### Competências em Desenvolvimento
 
@@ -455,7 +455,7 @@ Redução: 60% ⚡
 - [x] JMH benchmarking
 - [x] Performance optimization
 
-#### 🚧 Em Desenvolvimento
+#### Em Desenvolvimento
 
 - [ ] Spring Security (autenticação/autorização)
 - [ ] REST documentation (Swagger/OpenAPI)
@@ -465,7 +465,7 @@ Redução: 60% ⚡
 - [ ] Monitoring e logging
 - [ ] Docker containerization
 
-#### 📋 Planejado
+#### Planejado
 
 - [ ] Machine Learning (Spring ML)
 - [ ] Microservices architecture
@@ -478,15 +478,15 @@ Redução: 60% ⚡
 
 ### Foco de Aprendizado por Sprint
 
-**Sprint 1**: Core APIs e banco de dados ✅  
-**Sprint 2**: Validação e tratamento de erros 🚧  
-**Sprint 3**: Autenticação e autorização 📋  
-**Sprint 4**: Analytics e relatórios 📋  
-**Sprint 5**: ML/AI integration 📋  
+**Sprint 1**: Core APIs e banco de dados ✅
+**Sprint 2**: Validação e tratamento de erros 
+**Sprint 3**: Autenticação e autorização 
+**Sprint 4**: Analytics e relatórios 
+**Sprint 5**: ML/AI integration 
 
 ---
 
-## 📈 Otimizações Implementadas
+## Otimizações Implementadas
 
 ### Build Performance
 
@@ -508,7 +508,7 @@ Redução: 60% ⚡
 
 ---
 
-## 🤝 Contribuições
+## Contribuições
 
 Este é um projeto **educacional aberto**. Contribuições, sugestões e feedbacks são bem-vindos!
 
@@ -522,15 +522,15 @@ Este é um projeto **educacional aberto**. Contribuições, sugestões e feedbac
 
 ### Áreas para Contribuir
 
-- 🐛 **Bugs**: Encontrou um problema? Abra uma issue!
-- 📚 **Documentação**: Melhore os guias e comentários
+- **Bugs**: Encontrou um problema? Abra uma issue!
+- **Documentação**: Melhore os guias e comentários
 - ✨ **Features**: Novas funcionalidades para fases seguintes
 - ⚡ **Performance**: Otimizações adicionais
-- 🧪 **Testes**: Mais cobertura de testes
+- **Testes**: Mais cobertura de testes
 
 ---
 
-## 📞 Contato & Suporte
+## Contato & Suporte
 
 - **Issues**: [GitHub Issues](../../issues)
 - **Discussions**: [GitHub Discussions](../../discussions)
@@ -538,13 +538,13 @@ Este é um projeto **educacional aberto**. Contribuições, sugestões e feedbac
 
 ---
 
-## 📜 Licença
+## Licença
 
 Este projeto está sob a licença **MIT** - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-## 🙏 Agradecimentos
+## Agradecimentos
 
 - Spring Framework team
 - OpenJDK community
@@ -554,7 +554,7 @@ Este projeto está sob a licença **MIT** - veja o arquivo [LICENSE](LICENSE) pa
 
 ---
 
-## 📝 Notas de Desenvolvimento
+## Notas de Desenvolvimento
 
 ### Última Atualização
 

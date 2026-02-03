@@ -8,9 +8,9 @@
 
 ### Resultado Entregue
 
-✔ **60% redução em tempo de resposta (CI/CD)** 
-✔ **75% redução em tempo de execução (PMD)** 
-✔ **40% redução em tamanho de artefatos** 
+✔ **60% redução em tempo de resposta (CI/CD)**
+✔ **75% redução em tempo de execução (PMD)**
+✔ **40% redução em tamanho de artefatos**
 ✔ **12 problemas identificados e resolvidos (100%)**
 
 ---
@@ -193,6 +193,6 @@ String result = String.join(",", items); // Claro e eficiente
 
 ---
 
-**Projeto otimizado com sucesso em 4 dimensões principais.** 
-**Pronto para produção com 60% menos tempo de CI/CD.** 
+**Projeto otimizado com sucesso em 4 dimensões principais.**
+**Pronto para produção com 60% menos tempo de CI/CD.**
 **Data**: Fevereiro 2025

@@ -1,8 +1,8 @@
-# 🤝 Guia de Contribuição - Viagens
+# Guia de Contribuição - Viagens
 
 Obrigado por se interessar em contribuir para o projeto Viagens! Este documento oferece diretrizes e instruções para contribuidores.
 
-## 📋 Índice
+## Índice
 
 - [Código de Conduta](#código-de-conduta)
 - [Como Começar](#como-começar)
@@ -17,21 +17,21 @@ Obrigado por se interessar em contribuir para o projeto Viagens! Este documento 
 
 ---
 
-## 📜 Código de Conduta
+## Código de Conduta
 
 Esperamos que todos os contribuidores:
 
-✅ Sejam respeitosos e inclusivos  
-✅ Forneçam feedback construtivo  
-✅ Focalizem no que é melhor para a comunidade  
-✅ Sejam pacientes e educados  
-✅ Respeitem a privacidade dos outros  
+✅ Sejam respeitosos e inclusivos
+✅ Forneçam feedback construtivo
+✅ Focalizem no que é melhor para a comunidade
+✅ Sejam pacientes e educados
+✅ Respeitem a privacidade dos outros
 
 ❌ Comportamento abusivo, assédio ou discriminação não serão tolerados
 
 ---
 
-## 🚀 Como Começar
+## Como Começar
 
 ### 1. Setup Local
 
@@ -76,7 +76,7 @@ http://localhost:8080/swagger-ui.html
 
 ---
 
-## 🔄 Processo de Contribuição
+## Processo de Contribuição
 
 ### Passo 1: Fork o Repositório
 
@@ -139,31 +139,31 @@ git push origin feature/descricao-da-feature
 
 ---
 
-## 📝 Padrões de Código
+## Padrões de Código
 
 ### Estilo
 
 ```java
 // ✅ BOAS PRÁTICAS
 public class ViagemService {
-  private final ViagemRepository repository;
-  
-  public ViagemService(ViagemRepository repository) {
-    this.repository = repository;  // Dependency injection
-  }
-  
-  public Optional<Viagem> buscar(Long id) {
-    return repository.findById(id);  // Return Optional
-  }
+ private final ViagemRepository repository;
+
+ public ViagemService(ViagemRepository repository) {
+ this.repository = repository; // Dependency injection
+ }
+
+ public Optional<Viagem> buscar(Long id) {
+ return repository.findById(id); // Return Optional
+ }
 }
 
 // ❌ EVITAR
 public class ViagemService {
-  public ViagemService() {}  // No default constructor
-  
-  public Viagem buscar(Long id) {
-    return null;  // Don't return null, use Optional
-  }
+ public ViagemService() {} // No default constructor
+
+ public Viagem buscar(Long id) {
+ return null; // Don't return null, use Optional
+ }
 }
 ```bash
 
@@ -189,18 +189,18 @@ import com.empresa.viagens.model.Viagem;
 ```java
 /**
  * Descrição clara do método.
- * 
+ *
  * @param id ID da viagem
  * @return Optional contendo a viagem se encontrada
  */
 public Optional<Viagem> buscarPorId(Long id) {
-  // Implementação
+ // Implementação
 }
 ```bash
 
 ---
 
-## 💬 Commit Messages
+## Commit Messages
 
 Seguimos o padrão Conventional Commits:
 
@@ -209,14 +209,14 @@ Seguimos o padrão Conventional Commits:
 type(scope): subject
 
 # Tipos
-feat      - Nova feature
-fix       - Bug fix
-docs      - Documentação
-style     - Formatação, sem mudança lógica
-refactor  - Refatoração de código
-perf      - Melhorias de performance
-test      - Adição de testes
-chore     - Build, dependencies, etc
+feat - Nova feature
+fix - Bug fix
+docs - Documentação
+style - Formatação, sem mudança lógica
+refactor - Refatoração de código
+perf - Melhorias de performance
+test - Adição de testes
+chore - Build, dependencies, etc
 
 # Exemplos
 feat(api): adicionar endpoint de recomendações
@@ -227,7 +227,7 @@ perf(ml): otimizar algoritmo de recomendação
 
 ---
 
-## 🧪 Testes
+## Testes
 
 ### Executar Testes
 
@@ -247,16 +247,16 @@ perf(ml): otimizar algoritmo de recomendação
 ```java
 @Test
 public void deveBuscarViagemPorId() {
-  // Arrange
-  Viagem viagem = new Viagem(1L, "Rio");
-  when(repository.findById(1L)).thenReturn(Optional.of(viagem));
-  
-  // Act
-  Optional<Viagem> resultado = service.buscarPorId(1L);
-  
-  // Assert
-  assertTrue(resultado.isPresent());
-  assertEquals("Rio", resultado.get().getNome());
+ // Arrange
+ Viagem viagem = new Viagem(1L, "Rio");
+ when(repository.findById(1L)).thenReturn(Optional.of(viagem));
+
+ // Act
+ Optional<Viagem> resultado = service.buscarPorId(1L);
+
+ // Assert
+ assertTrue(resultado.isPresent());
+ assertEquals("Rio", resultado.get().getNome());
 }
 ```bash
 
@@ -269,24 +269,24 @@ public void deveBuscarViagemPorId() {
 
 ---
 
-## 📚 Documentação
+## Documentação
 
 ### JavaDoc
 
 ```java
 /**
  * Calcula a pontuação de recomendação para um destino.
- * 
+ *
  * A pontuação leva em conta: preferências do usuário (40%),
  * ajuste de orçamento (30%), e avaliação do destino (30%).
- * 
+ *
  * @param profile Perfil do usuário
  * @param destino Destino a ser avaliado
  * @return Pontuação entre 0.0 e 1.0
  * @throws IllegalArgumentException se destino for null
  */
 public double calcularScore(UserProfile profile, Destino destino) {
-  // Implementation
+ // Implementation
 }
 ```bash
 
@@ -303,7 +303,7 @@ Se adicionar feature significativa, atualize o README:
 
 ---
 
-## 🔀 Pull Requests
+## Pull Requests
 
 ### Template de PR
 
@@ -337,7 +337,7 @@ Descreva os testes que você realizou.
 
 ---
 
-## 🐛 Reporting Bugs
+## Reporting Bugs
 
 ### Antes de Reportar
 
@@ -411,7 +411,7 @@ Links, referências, etc.
 
 ---
 
-## 📦 Dependências
+## Dependências
 
 ### Adicionando Dependências
 
@@ -429,23 +429,23 @@ Links, referências, etc.
 ```xml
 <!-- Manter organizado e comentado -->
 <dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-web</artifactId>
-  <!-- Versão gerenciada pelo parent -->
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-web</artifactId>
+ <!-- Versão gerenciada pelo parent -->
 </dependency>
 ```bash
 
 ---
 
-## 🚀 Dicas para Sucesso
+## Dicas para Sucesso
 
-✅ **Comece pequeno**: Escolha uma issue pequena primeiro  
-✅ **Comunique**: Comente na issue antes de trabalhar  
-✅ **Testes**: Sempre adicione testes  
-✅ **Documentação**: Atualize docs com mudanças  
-✅ **Revisão**: Pedir feedback cedo  
-✅ **Rebase**: Mantenha commit history limpo  
-✅ **Respeito**: Seja respeitoso com feedback  
+✅ **Comece pequeno**: Escolha uma issue pequena primeiro
+✅ **Comunique**: Comente na issue antes de trabalhar
+✅ **Testes**: Sempre adicione testes
+✅ **Documentação**: Atualize docs com mudanças
+✅ **Revisão**: Pedir feedback cedo
+✅ **Rebase**: Mantenha commit history limpo
+✅ **Respeito**: Seja respeitoso com feedback
 
 ---
 
@@ -458,13 +458,13 @@ Links, referências, etc.
 
 ---
 
-## 📜 Licença
+## Licença
 
 Por contribuir, você concorda que suas contribuições serão licenciadas sob a MIT License.
 
 ---
 
-**Obrigado por contribuir!** 🎉
+**Obrigado por contribuir!** 
 
 Suas contribuições fazem o Viagens melhor para todos!
 

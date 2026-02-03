@@ -272,8 +272,8 @@ Para contribuir no desenvolvimento:
 
 ---
 
-**Última atualização**: 03 de Fevereiro de 2026  
-**Versão**: 0.0.1-SNAPSHOT  
+**Última atualização**: 03 de Fevereiro de 2026
+**Versão**: 0.0.1-SNAPSHOT
 **Status**: 🚀 Ativo e em desenvolvimento
 
 ⭐ Se este roadmap foi útil, considere dar uma estrela no GitHub!
