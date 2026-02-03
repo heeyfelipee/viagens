@@ -19,7 +19,7 @@ public class PerformanceBenchmarks {
     for (int i = 0; i < runs; i++) {
       sb.append('x');
     }
-    String r = sb.toString();
+    sb.toString();
     long t4 = System.nanoTime();
 
     System.out.printf("string concat: %d ms\n", (t2 - t1) / 1_000_000);
