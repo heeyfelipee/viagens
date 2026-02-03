@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+  Checkstyle configuration for viagens project - Strict mode
+  Based on Google Java Style Guide with enhancements for:
+  - Performance (catching string concatenation patterns)
+  - Security (avoiding sensitive logging)
+  - Maintainability (enforcing consistent code style)
+-->
+
+<module name="Checker">
+    <property name="charset" value="UTF-8"/>
+    <property name="severity" value="error"/>
+    <property name="fileExtensions" value="java,properties,xml"/>
+
+    <!-- Suppress warnings about missing module configuration -->
+    <module name="SuppressWarningsFilter"/>
+
+    <!-- File length -->
+    <module name="FileLength">
+        <property name="max" value="500"/>
+        <property name="severity" value="warning"/>
+    </module>
+
+    <!-- Line length -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    </module>
+
+    <!-- Tabs not allowed -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <!-- Trailing whitespace -->
+    <module name="TrailingWhitespace"/>
+
+    <module name="TreeWalker">
+        <property name="tabWidth" value="2"/>
+
+        <!-- Miscellaneous checks -->
+        <module name="RegexpSinglelineJavaStatement">
+            <property name="format" value="\+\+|--"/>
+            <property name="message" value="Use += or -= instead of ++ or --"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Imports -->
+        <module name="AvoidStarImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports">
+            <property name="processJavadoc" value="false"/>
+        </module>
+        <module name="ImportOrder">
+            <property name="groups" value="/^java\./,/^javax\./,/^org\./,/^com\./"/>
+            <property name="ordered" value="true"/>
+            <property name="separated" value="true"/>
+            <property name="option" value="top"/>
+            <property name="separatedStaticGroups" value="true"/>
+        </module>
+
+        <!-- Javadoc -->
+        <module name="MissingJavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Naming -->
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="ParameterName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="CatchParameterName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="allowOneCharVarInForLoop" value="true"/>
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+
+        <!-- Size Violations -->
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="100"/>
+            <property name="countEmpty" value="false"/>
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="ParameterNumber">
+            <property name="max" value="7"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Whitespace -->
+        <module name="WhitespaceAround">
+            <property name="allowEmptyConstructors" value="true"/>
+            <property name="allowEmptyMethods" value="true"/>
+            <property name="allowEmptyTypes" value="true"/>
+            <property name="allowEmptyLoops" value="true"/>
+        </module>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="WhitespaceAfter"/>
+        <module name="Indentation">
+            <property name="basicOffset" value="2"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="2"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
+            <property name="arrayElementIndent" value="2"/>
+        </module>
+
+        <!-- Modifiers -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Blocks -->
+        <module name="LeftCurly">
+            <property name="ignoreEnums" value="false"/>
+        </module>
+        <module name="RightCurly"/>
+        <module name="NeedBraces"/>
+        <module name="AvoidNestedBlocks">
+            <property name="allowInSwitchCase" value="true"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Control Flow -->
+        <module name="EmptyStatement"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="OneStatementPerLine"/>
+        <module name="FallThrough"/>
+
+        <!-- Design -->
+        <module name="InnerAssignment"/>
+        <module name="DeclarationOrder"/>
+        <module name="DefaultComesLast"/>
+        <module name="MissingCtor"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="EqualsHashCode"/>
+        <module name="NoClone"/>
+        <module name="NoFinalizer"/>
+        <module name="IllegalInstantiation">
+            <property name="classes" value="java.lang.Boolean,java.lang.Integer,java.lang.Long,java.lang.Double,java.lang.Float,java.lang.Short,java.lang.Character,java.lang.Byte"/>
+        </module>
+
+        <!-- Performance: Catch string concatenation issues -->
+        <module name="RegexpSinglelineJavaStatement">
+            <property name="format" value="\.append\(.*\+.*\)"/>
+            <property name="message" value="Avoid expression concatenation in append(); use separate append() calls for clarity"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="severity" value="warning"/>
+        </module>
+
+        <!-- Complexity -->
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="3"/>
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="NestedIfDepth">
+            <property name="max" value="2"/>
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="NestedTryDepth">
+            <property name="max" value="1"/>
+        </module>
+
+        <!-- Annotations -->
+        <module name="AnnotationUseStyle">
+            <property name="elementStyle" value="compact"/>
+        </module>
+        <module name="MissingDeprecated"/>
+        <module name="MissingOverride"/>
+        <module name="SuppressWarningsHolder"/>
+
+        <!-- Allow some Spring annotations without complaints -->
+        <module name="RegexpSinglelineJavaStatement">
+            <property name="format" value="@Suppress|@SuppressWarnings"/>
+            <property name="severity" value="ignore"/>
+        </module>
+    </module>
+
+</module>
