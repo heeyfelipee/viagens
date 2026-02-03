@@ -1,6 +1,9 @@
+# Pull Request
+
 ## Description
 
 Describe the changes in this PR. Include:
+
 - What problem does this solve or what feature does it add?
 - Why was this approach chosen?
 - Any important design decisions or trade-offs
@@ -15,12 +18,14 @@ Describe the changes in this PR. Include:
 ## How to Test Locally
 
 **Quick test (JDK21 - default):**
+
 ```bash
 ./mvnw -DskipTests=false verify
 mvn com.diffplug.spotless:spotless-maven-plugin:apply  # if formatting needed
 ```
 
 **Full quality checks (same as CI/CD with JDK17):**
+
 ```bash
 # Option 1: With Java 17 available
 mvn -Pstrict-quality -DskipTests=true verify
@@ -34,9 +39,10 @@ mvn -Djava.version=17 -Pstrict-quality -DskipTests=true verify
 ## CI/CD Checks
 
 This PR will trigger:
-- ✅ **build job**: Compile, format, and test with JDK21
-- ✅ **quality job**: Spotless and Checkstyle validation (PR-only)
-- ✅ **analysis job**: PMD and SpotBugs with JDK17 (PR-only)
+
+- **build job**: Compile, format, and test with JDK21
+- **quality job**: Spotless and Checkstyle validation (PR-only)
+- **analysis job**: PMD and SpotBugs with JDK17 (PR-only)
 
 ## Checklist
 
