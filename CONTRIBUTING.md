@@ -49,7 +49,7 @@ git config user.email "seu.email@example.com"
 
 # Crie uma branch para sua feature
 git checkout -b feature/sua-nova-feature
-```
+```bash
 
 ### 2. Ambiente de Desenvolvimento
 
@@ -66,13 +66,13 @@ git checkout -b feature/sua-nova-feature
 # Verificações de qualidade
 ./mvnw spotless:apply
 ./mvnw checkstyle:check
-```
+```bash
 
 ### 3. Acessar Swagger UI
 
-```
+```bash
 http://localhost:8080/swagger-ui.html
-```
+```bash
 
 ---
 
@@ -86,7 +86,7 @@ http://localhost:8080/swagger-ui.html
 git clone https://github.com/seu-usuario/viagens.git
 cd viagens
 git remote add upstream https://github.com/heeyfelipee/viagens.git
-```
+```bash
 
 ### Passo 2: Crie uma Branch
 
@@ -98,7 +98,7 @@ git checkout -b feature/descricao-da-feature
 
 # Ou para bug fixes:
 git checkout -b fix/descricao-do-bug
-```
+```bash
 
 ### Passo 3: Faça suas Mudanças
 
@@ -109,7 +109,7 @@ git checkout -b fix/descricao-do-bug
 
 # Formate o código
 ./mvnw spotless:apply
-```
+```bash
 
 ### Passo 4: Commit
 
@@ -120,14 +120,14 @@ git commit -m "feat: adicionar nova feature XYZ
 
 Descrição detalhada do que foi implementado e por quê.
 "
-```
+```bash
 
 ### Passo 5: Push
 
 ```bash
 # Push para seu fork
 git push origin feature/descricao-da-feature
-```
+```bash
 
 ### Passo 6: Pull Request
 
@@ -165,7 +165,7 @@ public class ViagemService {
     return null;  // Don't return null, use Optional
   }
 }
-```
+```bash
 
 ### Nomenclatura
 
@@ -182,7 +182,7 @@ import com.empresa.viagens.model.Viagem;
 
 // Avoid wildcard imports
 // ❌ import com.empresa.viagens.model.*;
-```
+```bash
 
 ### Comentários
 
@@ -196,7 +196,7 @@ import com.empresa.viagens.model.Viagem;
 public Optional<Viagem> buscarPorId(Long id) {
   // Implementação
 }
-```
+```bash
 
 ---
 
@@ -223,7 +223,7 @@ feat(api): adicionar endpoint de recomendações
 fix(auth): corrigir validação de token JWT
 docs(readme): atualizar instruções de setup
 perf(ml): otimizar algoritmo de recomendação
-```
+```bash
 
 ---
 
@@ -240,7 +240,7 @@ perf(ml): otimizar algoritmo de recomendação
 
 # Com coverage
 ./mvnw test jacoco:report
-```
+```bash
 
 ### Escrever Testes
 
@@ -258,7 +258,7 @@ public void deveBuscarViagemPorId() {
   assertTrue(resultado.isPresent());
   assertEquals("Rio", resultado.get().getNome());
 }
-```
+```bash
 
 ### Requisitos
 
@@ -288,7 +288,7 @@ public void deveBuscarViagemPorId() {
 public double calcularScore(UserProfile profile, Destino destino) {
   // Implementation
 }
-```
+```bash
 
 ### README Updates
 
@@ -299,7 +299,7 @@ Se adicionar feature significativa, atualize o README:
 - Recomendação de destinos com IA
 - Validação de entrada robusta
 - Caching de resultados
-```
+```bash
 
 ---
 
@@ -326,7 +326,7 @@ Descreva os testes que você realizou.
 - [ ] Adicionei testes novos
 - [ ] Atualizei documentação
 - [ ] Sem breaking changes
-```
+```bash
 
 ### Revisão de PR
 
@@ -371,7 +371,7 @@ O que deveria acontecer?
 - Java: 17
 - OS: Ubuntu 22.04
 - Browser: Chrome 120
-```
+```bash
 
 ---
 
@@ -407,7 +407,7 @@ Outras abordagens?
 
 ## Contexto Adicional
 Links, referências, etc.
-```
+```bash
 
 ---
 
@@ -422,7 +422,7 @@ Links, referências, etc.
 # 3. Considere o tamanho e licença
 # 4. Atualize pom.xml
 # 5. Documente o motivo
-```
+```bash
 
 ### Padrão para pom.xml
 
@@ -433,7 +433,7 @@ Links, referências, etc.
   <artifactId>spring-boot-starter-web</artifactId>
   <!-- Versão gerenciada pelo parent -->
 </dependency>
-```
+```bash
 
 ---
 

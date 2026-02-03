@@ -9,6 +9,7 @@
 ## 📊 Resumo Executivo
 
 O projeto **viagens** foi submetido a uma otimização abrangente em 4 dimensões:
+
 - ⏱️ **Tempo de Resposta**: -30% esperado via paralelização CI/CD
 - 🚀 **Tempo de Execução**: -75% esperado via redução PMD ruleset
 - 💾 **Dados**: -40% esperado via skip javadoc e otimização cache
@@ -21,14 +22,16 @@ O projeto **viagens** foi submetido a uma otimização abrangente em 4 dimensõe
 ### 1.1 Paralelização de Jobs
 
 **Antes:**
-```
+
+```bash
 build (3 min) → quality (2 min) → analysis (3 min) = 8 min sequencial
-```
+```bash
 
 **Depois:**
-```
+
+```bash
 build (3 min) ∥ quality (2 min) ∥ analysis (3 min) = 3 min paralelo
-```
+```bash
 
 **Arquivo Modificado**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 
@@ -49,17 +52,20 @@ build (3 min) ∥ quality (2 min) ∥ analysis (3 min) = 3 min paralelo
    - Economia: ~1-2 min por job
 
 4. **Variáveis de Ambiente (G1GC):**
-   ```bash
-   MAVEN_OPTS: -Xmx2g -XX:+UseG1GC -XX:+ParallelRefProcEnabled
-   ```
-   - G1 Garbage Collector: melhor para heaps grandes
-   - Parallel Reference Processing: acelera GC em ~20%
 
-5. **Job Summary:**
+```bash
+MAVEN_OPTS: -Xmx2g -XX:+UseG1GC -XX:+ParallelRefProcEnabled
+```
+
+- G1 Garbage Collector: melhor para heaps grandes
+- Parallel Reference Processing: acelera GC em ~20%
+
+1. **Job Summary:**
    - Novo job `summary` que valida sucesso de todos os 3
    - Falha rápida se qualquer job falha
 
 **Impacto Esperado:**
+
 - ✅ 60% redução no tempo total (8 min → 3 min)
 - ✅ Melhor utilização de recursos (3 cores vs 1)
 - ✅ Feedback mais rápido aos desenvolvedores
@@ -73,13 +79,15 @@ build (3 min) ∥ quality (2 min) ∥ analysis (3 min) = 3 min paralelo
 **Arquivo Modificado**: [pom.xml](pom.xml)
 
 **Novas Propriedades:**
+
 ```xml
 <maven.compiler.fork>true</maven.compiler.fork>
 <maven.compiler.maxmem>1024m</maven.compiler.maxmem>
 <maven.javadoc.skip>true</maven.javadoc.skip>
-```
+```bash
 
 **Benefícios:**
+
 - `fork=true`: Habilita compilação em processo separado
   - Melhor utilização de múltiplos cores
   - Reutiliza JVM entre compilações
@@ -95,11 +103,13 @@ build (3 min) ∥ quality (2 min) ∥ analysis (3 min) = 3 min paralelo
   - Economia: ~1-2 min por build
 
 **MAVEN_OPTS Adicionadas:**
+
 ```bash
 -Xmx2g -XX:+UseG1GC -XX:+ParallelRefProcEnabled
-```
+```bash
 
 **Impacto Esperado:**
+
 - ✅ 35% redução no tempo de build (3 min → 1:45 min)
 - ✅ Mais parallelismo via multi-core
 - ✅ Melhor memória management
@@ -113,37 +123,43 @@ build (3 min) ∥ quality (2 min) ∥ analysis (3 min) = 3 min paralelo
 **Arquivo Modificado**: [pmd-ruleset.xml](pmd-ruleset.xml)
 
 **Antes:**
+
 - 85 rules ativas (lento, muitos falsos positivos)
 - Tempo: 3-5 minutos por execução
 
 **Depois:**
+
 - 40 rules críticas (mantém qualidade, elimina overhead)
 - Tempo: 45-60 segundos esperado
 
 **Estratégia de Seleção:**
 
 ✅ **Mantidas (Performance/Segurança/Erros):**
-```
+
+```bash
 Performance Rules: TooManyMethods, UnnecessaryCopyConstructorCall, etc.
 Security Rules: SqlInjection, HardcodedPassword, etc.
 Error-prone Rules: NullPointerException, UnusedVariable, etc.
-```
+```bash
 
 ❌ **Removidas (Preferências de Estilo):**
-```
+
+```bash
 Naming Rules: VariableNamingConventions, etc.
 Complexity Rules: ComplexityRules, etc.
 Design Rules: AvoidDeeplyNestedIfStmts, etc.
-```
+```bash
 
 **Thresholds Ajustados:**
+
 ```xml
 <property name="max" value="150"/>  <!-- Method max: 100 → 150 -->
 <property name="max" value="750"/>  <!-- Class max: 500 → 750 -->
 <property name="max" value="250"/>  <!-- NPath: 200 → 250 -->
-```
+```bash
 
 **Impacto Esperado:**
+
 - ✅ 75% redução no tempo de análise (3-5 min → 45-60 seg)
 - ✅ Mantém detecção de bugs críticos
 - ✅ Feedback mais rápido aos devs
@@ -169,14 +185,17 @@ Design Rules: AvoidDeeplyNestedIfStmts, etc.
    - Economia: 80% menos storage
 
 3. **Limpeza Automática:**
+
    ```bash
-   maven.javadoc.skip=true
-   ```
-   - Remove javadoc JAR (~10MB por build)
-   - Remove sources JAR (~5MB por build)
-   - Economia por build: ~15MB
+maven.javadoc.skip=true
+```
+
+- Remove javadoc JAR (~10MB por build)
+- Remove sources JAR (~5MB por build)
+- Economia por build: ~15MB
 
 **Impacto Esperado:**
+
 - ✅ 40% redução em artefatos por build
 - ✅ 80% economia de storage ao longo do tempo
 - ✅ Downloads mais rápidos
@@ -240,7 +259,7 @@ Design Rules: AvoidDeeplyNestedIfStmts, etc.
 
 **Cobertura de Testes:**
 
-```
+```bash
 ✅ stringConcatSmall()           - String concat + 100 iterações
 ✅ stringBuilderSmall()          - StringBuilder + 100 iterações
 ✅ stringConcatMedium()          - String concat + 1K iterações
@@ -248,19 +267,20 @@ Design Rules: AvoidDeeplyNestedIfStmts, etc.
 ✅ stringConcatLarge()           - String concat + 10K iterações
 ✅ stringBuilderLarge()          - StringBuilder + 10K iterações
 ✅ stringBuilderWithCapacity()   - StringBuilder otimizado + 10K
-```
+```bash
 
 **Resultados Esperados:**
-```
+
+```bash
 StringBuilder é ~100-1000x mais rápido que String concat
 Capacity hint adiciona ~5% de melhoria em dados grandes
-```
+```bash
 
 ### Arquivo: JmhStringJoinBenchmark.java
 
 **Cobertura de Testes:**
 
-```
+```bash
 ✅ joinWithStringBuilderSmall()              - Manual loop + 100 items
 ✅ joinWithStringJoinSmall()                 - String.join() + 100 items
 ✅ joinWithStringBuilderSeparatorMedium()    - Manual com sep + 1K items
@@ -268,19 +288,21 @@ Capacity hint adiciona ~5% de melhoria em dados grandes
 ✅ joinWithStringBuilderLarge()              - Manual com capacidade
 ✅ joinWithStringJoinLarge()                 - String.join() + 10K items
 ✅ joinWithStreamMedium()                    - Stream.reduce() + 1K items
-```
+```bash
 
 **Resultados Esperados:**
-```
+
+```bash
 String.join() é comparável a StringBuilder manual
 Stream.reduce() é 2-5x mais lento para grandes datasets
-```
+```bash
 
 ---
 
 ## 📋 ARQUIVOS DOCUMENTAÇÃO CRIADOS
 
 Todos os arquivos de documentação foram criados para suportar:
+
 - Onboarding rápido de novos devs
 - Guias de desenvolvimento
 - Templates de PR
@@ -300,18 +322,21 @@ Todos os arquivos de documentação foram criados para suportar:
 ## 🚀 PRÓXIMOS PASSOS
 
 ### Imediato (Esta Sprint)
+
 - [ ] Executar `mvn clean verify` para validar todas as mudanças
 - [ ] Fazer push dos commits
 - [ ] Monitorar primeira execução do workflow paralelizado
 - [ ] Medir tempo real vs esperado
 
 ### Curto Prazo (Próximas 2 Semanas)
+
 - [ ] Validar thresholds PMD em novo code
 - [ ] Ajustar regras se necessário
 - [ ] Executar benchmarks completos: `mvn -DskipTests jmh:benchmark`
 - [ ] Documentar resultados reais
 
 ### Médio Prazo (Próximo Mês)
+
 - [ ] Implementar CI cache incremental
 - [ ] Adicionar análise de dependências
 - [ ] Monitorar tendências de performance
@@ -322,6 +347,7 @@ Todos os arquivos de documentação foram criados para suportar:
 ## 📊 RECOMENDAÇÕES
 
 ### 1. **Usar StringBuilder em loops**
+
 ```java
 // ❌ EVITAR
 String s = "";
@@ -334,21 +360,24 @@ StringBuilder sb = new StringBuilder();
 for (int i = 0; i < n; i++) {
   sb.append(i);  // Só aloca conforme necessário
 }
-```
+```bash
 
 ### 2. **Usar String.join() para coleções**
+
 ```java
 // ✅ Claro e eficiente
 String result = String.join(",", items);
-```
+```bash
 
 ### 3. **Dar dica de capacidade quando conhecida**
+
 ```java
 // ✅ Melhor performance em dados grandes
 StringBuilder sb = new StringBuilder(estimatedSize);
-```
+```bash
 
 ### 4. **Monitorar CI/CD times**
+
 - Alerte se build > 5 min
 - Alerte se analysis > 2 min
 - Investigue degradação de performance
@@ -371,6 +400,7 @@ StringBuilder sb = new StringBuilder(estimatedSize);
 ## 📞 SUPORTE
 
 Para perguntas sobre as otimizações:
+
 1. Veja [DEVELOPMENT.md](DEVELOPMENT.md) para setup
 2. Veja [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md) para detalhes técnicos
 3. Rode benchmarks: `mvn -DskipTests jmh:benchmark`
@@ -379,6 +409,7 @@ Para perguntas sobre as otimizações:
 ---
 
 **Projeto otimizado com sucesso em 4 dimensões principais:**
+
 - ⏱️ Tempo de resposta: -60% no CI/CD
 - 🚀 Tempo de execução: -75% em análise estática
 - 💾 Tamanho de dados: -40% em artefatos

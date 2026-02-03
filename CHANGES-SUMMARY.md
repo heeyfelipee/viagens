@@ -6,7 +6,8 @@ Added comprehensive developer documentation, strict quality profiles, and update
 
 ## Changes Made
 
-### 1. **Updated DEVELOPMENT.md** 
+### 1. **Updated DEVELOPMENT.md**
+
 📄 **Location**: [DEVELOPMENT.md](DEVELOPMENT.md)
 
 - Added clear instructions for local execution with JDK21
@@ -17,18 +18,21 @@ Added comprehensive developer documentation, strict quality profiles, and update
 - Added performance tuning notes and benchmark instructions
 
 **Key Feature**: Instructions on how to run analysis locally before pushing:
+
 ```bash
 # Quick check with JDK21 (default)
 ./mvnw -DskipTests=false verify
 
 # Full analysis like CI does (requires JDK17)
 mvn -Pstrict-quality -DskipTests=true verify
-```
+```bash
 
 ### 2. **Created pmd-ruleset.xml** ⚙️
+
 **Location**: [pmd-ruleset.xml](pmd-ruleset.xml)
 
 Strict PMD ruleset including:
+
 - Best practices enforcement
 - Code style and maintainability rules
 - Design flaw detection
@@ -38,14 +42,17 @@ Strict PMD ruleset including:
 - Security rules
 
 Custom thresholds:
+
 - Maximum method length: 100 lines
 - Maximum class length: 500 lines
 - Optimized for Spring Boot development
 
 ### 3. **Created checkstyle-strict.xml** ⚙️
+
 **Location**: [checkstyle-strict.xml](checkstyle-strict.xml)
 
 Enhanced Checkstyle configuration with:
+
 - Google Java Style Guide compliance
 - Performance checks (string concatenation patterns)
 - Import organization and cleanup
@@ -56,6 +63,7 @@ Enhanced Checkstyle configuration with:
 - Complexity thresholds (cyclomatic complexity, nested depth)
 
 Custom limits:
+
 - Maximum line length: 120 characters
 - Maximum file length: 500 lines
 - Maximum method length: 100 lines
@@ -63,6 +71,7 @@ Custom limits:
 - Maximum nested IF depth: 2
 
 ### 4. **Updated pom.xml** 🔧
+
 **Location**: [pom.xml](pom.xml)
 
 - Added `pmd-ruleset.xml` reference to PMD plugin configuration
@@ -76,9 +85,11 @@ Custom limits:
 **Strict Profile** (`-Pstrict-quality`): All analysis tools enabled and enforce violations
 
 ### 5. **Created PR-TEMPLATE.md** 📝
+
 **Location**: [PR-TEMPLATE.md](PR-TEMPLATE.md)
 
 Comprehensive PR template with:
+
 - Description sections
 - Type of change checklist
 - Local testing instructions (both quick and full)
@@ -88,18 +99,22 @@ Comprehensive PR template with:
 - Instructions to revert to main branch
 
 ### 6. **Created GitHub Pull Request Template** 📝
+
 **Location**: [.github/pull_request_template.md](.github/pull_request_template.md)
 
 Streamlined version automatically used by GitHub:
+
 - Quick testing instructions
 - Full quality checks information
 - CI/CD summary
 - Quick checklist
 
 ### 7. **Created QUICK-START.md** 🚀
+
 **Location**: [QUICK-START.md](QUICK-START.md)
 
 Developer quick-start guide including:
+
 - 5-minute clone and build instructions
 - Development workflow steps
 - Environment setup checks
@@ -123,7 +138,7 @@ mvn test
 
 # Commit and push
 git push origin my-feature
-```
+```bash
 
 ### For Pre-PR Validation
 
@@ -133,13 +148,13 @@ git push origin my-feature
 
 # Full validation like CI does (requires JDK17)
 mvn -Pstrict-quality -DskipTests=true verify
-```
+```bash
 
 ### To Run Benchmarks
 
 ```bash
 mvn -DskipTests=true jmh:benchmark
-```
+```bash
 
 ## CI/CD Pipeline Explanation
 
@@ -173,6 +188,7 @@ The workflow runs automatically on push and PRs:
 ### Strict Quality Profile
 
 Allows developers to optionally run full analysis locally:
+
 - Validates work before pushing to CI
 - Educational: see what CI will check
 - Optional: doesn't slow down daily development
@@ -185,7 +201,7 @@ Allows developers to optionally run full analysis locally:
 
 ## Files Modified/Created
 
-```
+```bash
 ✨ Created:
   - pmd-ruleset.xml (PMD rules - performance, security, maintainability)
   - checkstyle-strict.xml (Checkstyle rules - style, complexity)
@@ -196,18 +212,20 @@ Allows developers to optionally run full analysis locally:
 ✏️  Modified:
   - DEVELOPMENT.md (Updated with comprehensive instructions)
   - pom.xml (Added ruleset reference, enhanced profiles)
-```
+```bash
 
 ## Next Steps for Team
 
 1. **Review** the profiles and rulesets
 2. **Test locally** with:
+
    ```bash
    mvn -Pstrict-quality -DskipTests=true verify
    ```
-3. **Adjust thresholds** in rulesets if too strict/lenient
-4. **Update CI workflow** if needed (currently set up correctly)
-5. **Communicate** with team about new profiles and requirements
+
+1. **Adjust thresholds** in rulesets if too strict/lenient
+2. **Update CI workflow** if needed (currently set up correctly)
+3. **Communicate** with team about new profiles and requirements
 
 ## Benefits
 

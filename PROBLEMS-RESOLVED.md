@@ -32,14 +32,14 @@ A análise do projeto identificou inicialmente **544 problemas** distribuídos e
 
 ### Build Status
 
-```
+```bash
 ✅ Compilação      : SUCESSO (Java 17)
 ✅ Testes         : SUCESSO (100% passing)
 ✅ Checkstyle     : SUCESSO (0 violations)
 ✅ Spotless       : SUCESSO (formatado)
 ✅ PMD            : SUCESSO (40 rules ativas)
 ✅ SpotBugs       : SUCESSO (sem bugs críticos)
-```
+```bash
 
 ### Métricas Atuais
 
@@ -66,7 +66,7 @@ A análise do projeto identificou inicialmente **544 problemas** distribuídos e
 <maven.compiler.source>17</maven.compiler.source>
 <maven.compiler.target>17</maven.compiler.target>
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-```
+```bash
 
 **Benefício**: Suporte a Java 17 LTS amplamente disponível
 
@@ -103,18 +103,21 @@ A análise do projeto identificou inicialmente **544 problemas** distribuídos e
 ## 🎯 Próximas Melhorias
 
 ### Curto Prazo (1-2 sprints)
+
 - [ ] Implementar Spring Security
 - [ ] Adicionar testes de integração
 - [ ] Documentar API com Swagger/OpenAPI
 - [ ] Setup de Docker e Docker Compose
 
 ### Médio Prazo (3-4 sprints)
+
 - [ ] Implementar cache (Redis)
 - [ ] Adicionar logging estruturado
 - [ ] Setup de monitoring (Prometheus)
 - [ ] Implementar rate limiting
 
 ### Longo Prazo (5+ sprints)
+
 - [ ] Migrar para microserviços
 - [ ] Implementar ML/AI features
 - [ ] Adicionar GraphQL
@@ -126,7 +129,7 @@ A análise do projeto identificou inicialmente **544 problemas** distribuídos e
 
 ### Build Pipeline
 
-```
+```bash
 ANTES (Sequencial):
 build (3m) → quality (2m) → analysis (3m) = 8 minutos
 
@@ -134,16 +137,16 @@ DEPOIS (Paralelo):
 build (3m)
 quality (2m) ─┐
 analysis (3m) ┴─ 3 minutos TOTAL
-```
+```bash
 
 **Melhoria**: 60% redução ⚡
 
 ### Análise Estática
 
-```
+```bash
 ANTES: 85 rules, 3-5 minutos, muitos falsos positivos
 DEPOIS: 40 rules, 45-60 segundos, apenas críticos
-```
+```bash
 
 **Melhoria**: 75% redução + melhor qualidade ✅
 
@@ -155,7 +158,7 @@ DEPOIS: 40 rules, 45-60 segundos, apenas críticos
 
 ```bash
 ./mvnw clean verify
-```
+```bash
 
 **Resultado esperado**: BUILD SUCCESS ✅
 
@@ -164,7 +167,7 @@ DEPOIS: 40 rules, 45-60 segundos, apenas críticos
 ```bash
 ./mvnw spotless:apply
 git status  # Nenhum arquivo modificado
-```
+```bash
 
 **Resultado esperado**: Nenhuma mudança necessária ✅
 
@@ -172,7 +175,7 @@ git status  # Nenhum arquivo modificado
 
 ```bash
 ./mvnw pmd:check
-```
+```bash
 
 **Resultado esperado**: Skipped (configurado para CI apenas) ✅
 
@@ -180,7 +183,7 @@ git status  # Nenhum arquivo modificado
 
 ```bash
 ./mvnw checkstyle:check
-```
+```bash
 
 **Resultado esperado**: 0 violations ✅
 
@@ -188,7 +191,7 @@ git status  # Nenhum arquivo modificado
 
 ```bash
 ./mvnw -DskipTests jmh:benchmark
-```
+```bash
 
 **Resultado esperado**: Benchmarks completos com resultados ✅
 

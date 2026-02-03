@@ -3,6 +3,7 @@
 ## Documentation Files (Updated/Created)
 
 ### Development Guides
+
 - **[QUICK-START.md](QUICK-START.md)** ⭐ **NEW** - Fast onboarding (5 min to first build)
   - Clone and build instructions
   - Development workflow
@@ -18,6 +19,7 @@
   - Pre-commit validation steps
 
 ### PR Templates
+
 - **[PR-TEMPLATE.md](PR-TEMPLATE.md)** ⭐ **NEW** - Standalone PR template reference
   - Detailed testing instructions
   - Quality check information
@@ -30,6 +32,7 @@
   - Links to detailed guide
 
 ### Change Documentation
+
 - **[CHANGES-SUMMARY.md](CHANGES-SUMMARY.md)** ⭐ **NEW** - Summary of all changes
   - Overview of modifications
   - Detailed change descriptions
@@ -38,18 +41,21 @@
   - Next steps for team
 
 ### Reference Docs
+
 - **[HELP.md](HELP.md)** - Spring Boot reference links
 - **[FILE-MANIFEST.md](FILE-MANIFEST.md)** ⭐ **NEW** - This file
 
 ## Configuration Files (Updated/Created)
 
 ### Build Configuration
+
 - **[pom.xml](pom.xml)** ✨ **UPDATED** - Maven project configuration
   - PMD plugin now uses `pmd-ruleset.xml`
   - Enhanced strict-quality profile
   - SpotBugs and Checkstyle configured for strict mode
 
 ### Quality Rules
+
 - **[pmd-ruleset.xml](pmd-ruleset.xml)** ⭐ **NEW** - PMD rules (strict mode)
   - Performance checks (String concatenation)
   - Security rules
@@ -72,6 +78,7 @@
     - Max nested IF: 2
 
 ### CI/CD Configuration
+
 - **[.github/workflows/ci.yml](.github/workflows/ci.yml)** - Existing GitHub Actions workflow
   - build job (JDK21): compile, format, test
   - quality job (JDK21, PR-only): Spotless & Checkstyle
@@ -79,7 +86,7 @@
 
 ## Source Code Structure
 
-```
+```bash
 src/
 ├── main/java/com/empresa/viagens/
 │   ├── ViagensApplication.java
@@ -89,7 +96,7 @@ src/
     ├── ViagensApplicationTests.java
     ├── PerformanceBenchmarks.java
     └── PerformanceBenchmarksTest.java
-```
+```bash
 
 ## Quick File Reference
 
@@ -107,7 +114,7 @@ src/
 
 ## File Statistics
 
-```
+```bash
 📊 Changes by Type:
 - 📝 Documentation: 5 files (3 new, 1 updated, 1 reference)
 - ⚙️  Configuration: 3 files (2 new, 1 updated)
@@ -121,7 +128,7 @@ src/
 - PR-TEMPLATE.md: ~150 lines
 - CHANGES-SUMMARY.md: ~270 lines
 - pom.xml: ~222 lines (updated)
-```
+```bash
 
 ## How to Navigate
 
@@ -134,21 +141,25 @@ src/
 ## Quality Tools Configuration
 
 ### Default (Local with JDK21)
+
 - ✅ Spotless (formatting) - auto-applies
 - ✅ Checkstyle (style checks) - fails on violations
 - ⏭️ PMD - skipped (JDK compatibility)
 - ⏭️ SpotBugs - skipped (JDK compatibility)
 
 ### Strict Mode (Optional with JDK17)
+
 ```bash
 mvn -Pstrict-quality -DskipTests=true verify
-```
+```bash
+
 - ✅ Spotless
 - ✅ Checkstyle
 - ✅ PMD (uses `pmd-ruleset.xml`)
 - ✅ SpotBugs (Max effort, Low threshold)
 
 ### CI/CD Pipeline
+
 - **Build job (JDK21)**: Spotless + Checkstyle + Tests
 - **Quality job (JDK21, PR-only)**: Spotless + Checkstyle strict validation
 - **Analysis job (JDK17, PR-only)**: PMD + SpotBugs

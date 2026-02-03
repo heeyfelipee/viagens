@@ -3,6 +3,7 @@
 ## Description
 
 Describe the changes in this PR. Include:
+
 - What problem does this solve or what feature does it add?
 - Why was this approach chosen?
 - Any important design decisions or trade-offs
@@ -27,7 +28,7 @@ cd viagens
 
 # Format code if needed
 mvn com.diffplug.spotless:spotless-maven-plugin:apply
-```
+```bash
 
 ### Running Full Quality Checks (Optional)
 
@@ -44,7 +45,7 @@ mvn -Djava.version=17 -Pstrict-quality -DskipTests=true verify
 # Option 3: Use docker (if available)
 docker run -it --rm -v /path/to/viagens:/workspace -w /workspace \
   eclipse-temurin:17-jdk mvn -Pstrict-quality -DskipTests=true verify
-```
+```bash
 
 ## GitHub Actions CI/CD Pipeline
 
@@ -87,7 +88,7 @@ Run benchmarks locally:
 
 ```bash
 mvn -DskipTests=true jmh:benchmark
-```
+```bash
 
 ## Notes
 
@@ -100,7 +101,7 @@ mvn -DskipTests=true jmh:benchmark
 ```bash
 git checkout main
 git pull origin main
-```
+```bash
 
 ---
 

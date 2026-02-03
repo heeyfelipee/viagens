@@ -6,7 +6,7 @@
 git clone https://github.com/seu-usuario/viagens.git
 cd viagens
 ./mvnw clean verify    # Compile, format, and run tests
-```
+```bash
 
 ## Development Workflow
 
@@ -30,14 +30,14 @@ mvn test
 
 # Full verify
 ./mvnw clean verify
-```
+```bash
 
 ### 3. Run Benchmarks (optional)
 
 ```bash
 # Performance micro-benchmarks
 mvn -DskipTests=true jmh:benchmark
-```
+```bash
 
 ### 4. Push and Open PR
 
@@ -47,7 +47,7 @@ git add .
 git commit -m "feat: add amazing feature"
 git push origin my-feature
 # Create PR on GitHub
-```
+```bash
 
 ## Local Environment
 
@@ -68,7 +68,7 @@ java -version
 
 # Node (optional)
 node --version
-```
+```bash
 
 ## Running Strict Analysis Locally
 
@@ -80,7 +80,7 @@ mvn -Pstrict-quality -DskipTests=true verify
 
 # Or specify Java 17
 mvn -Djava.version=17 -Pstrict-quality -DskipTests=true verify
-```
+```bash
 
 This is what runs in the GitHub Actions CI/CD pipeline for pull requests.
 
@@ -96,7 +96,7 @@ This is what runs in the GitHub Actions CI/CD pipeline for pull requests.
 
 # With Java 17 (if available)
 mvn -Pstrict-quality -DskipTests=true verify
-```
+```bash
 
 ### "Checkstyle violations"
 
@@ -106,7 +106,7 @@ mvn checkstyle:checkstyle
 
 # View HTML report
 open target/site/checkstyle.html
-```
+```bash
 
 ### "Spotless formatting issues"
 
@@ -116,7 +116,7 @@ mvn com.diffplug.spotless:spotless-maven-plugin:apply
 
 # Check without fixing
 mvn com.diffplug.spotless:spotless-maven-plugin:check
-```
+```bash
 
 ### "Tests failing"
 
@@ -126,11 +126,11 @@ mvn test -Dtest=YourTestClass
 
 # Run with verbose output
 mvn test -X
-```
+```bash
 
 ## Project Structure
 
-```
+```bash
 viagens/
 ├── src/main/java/com/empresa/viagens/    # Application code
 ├── src/test/java/com/empresa/viagens/    # Tests
@@ -140,7 +140,7 @@ viagens/
 ├── DEVELOPMENT.md                         # Detailed developer guide
 ├── HELP.md                                # Help documentation
 └── .github/workflows/ci.yml               # CI/CD pipeline
-```
+```bash
 
 ## First Contribution Checklist
 

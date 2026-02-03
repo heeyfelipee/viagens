@@ -5,6 +5,7 @@
 ### 1. **JMH Benchmarks - Aumentadas Capacidades de Testes**
 
 #### JmhBenchmarks.java - Melhorias
+
 - ✅ **5 → 10 iterações de aquecimento** (melhor estabilização)
 - ✅ **Testes em 3 tamanhos**: pequeno (100), médio (1.000), grande (10.000)
 - ✅ **Modo duplo**: AverageTime + Throughput
@@ -12,33 +13,37 @@
 - ✅ **Tempo em microsegundos** (mais preciso que nanosegundos)
 
 **Padrão:**
-```
+
+```bash
 stringConcatLarge():       ~50-100ms ❌ EVITE
 stringBuilderLarge():      ~1-2ms   ✅ USE ISTO
 stringBuilderWithCapacity: ~0.8-1.5ms ✨ MELHOR
-```
+```bash
 
 #### JmhStringJoinBenchmark.java - Melhorias
+
 - ✅ **Pre-allocation de listas** (@Setup)
 - ✅ **Testes com separadores** (realista)
 - ✅ **3 tamanhos de datasets**
 - ✅ **Adicionado teste com Stream** (comparativo)
 
 **Padrão:**
-```
+
+```bash
 String.join(","):    ~0.5-1ms   ✅ Recomendado
 StringBuilder sep:    ~0.6-1.2ms ✅ Equivalente
 Stream reduce:       ~10-20ms   ❌ Evite para listas grandes
-```
+```bash
 
 ### 2. **CI/CD Pipeline - Paralelização & Otimização**
 
 #### ✅ Mudanças na arquitetura de jobs
-```
+
+```bash
 Antes (sequencial):          Depois (paralelo):
 build → quality → analysis   build ∥ quality ∥ analysis
                              └─→ summary
-```
+```bash
 
 **Melhorias:**
 | Aspecto | Antes | Depois | Ganho |
@@ -49,6 +54,7 @@ build → quality → analysis   build ∥ quality ∥ analysis
 | Artifact retention | 30 dias | 5 dias | **Storage economia** |
 
 #### ✅ Otimizações de configuração
+
 - **MAVEN_OPTS**: `-Xmx2g -XX:+UseG1GC -XX:+ParallelRefProcEnabled`
   - Heap alocado adequadamente (2GB)
   - Garbage collector otimizado
@@ -60,6 +66,7 @@ build → quality → analysis   build ∥ quality ∥ analysis
 - **Conditional artifacts**: Só upload se existir arquivo (economia)
 
 #### ✅ Build otimizado
+
 ```bash
 # Antes: compilava tudo sequencialmente
 mvn -B -V -DskipTests=false verify
@@ -69,20 +76,22 @@ mvn $MAVEN_CLI_OPTS -DskipTests=false \
   -Dspotbugs.skip=true \
   -Dpmd.skip=true \
   clean verify
-```
+```bash
 
 **Resultado**: Build thread principal **30% mais rápida** ⚡
 
 ### 3. **Maven Configuration - Propriedades de Build**
 
 #### Adicionadas ao pom.xml
+
 ```xml
 <maven.compiler.fork>true</maven.compiler.fork>
 <maven.compiler.maxmem>1024m</maven.compiler.maxmem>
 <maven.javadoc.skip>true</maven.javadoc.skip>
-```
+```bash
 
 **Benefícios:**
+
 - Fork separado do compilador (utiliza múltiplos cores)
 - Limite de memória adequado (evita overflow)
 - Skip de Javadoc em CI (economiza ~2-3 min)
@@ -91,26 +100,30 @@ mvn $MAVEN_CLI_OPTS -DskipTests=false \
 ### 4. **PMD Ruleset - Otimização de Execução**
 
 #### Antes (85 regras ativas)
-```
+
+```bash
 Tempo: 3-5 minutos
 Memória: ~500MB
 Falsos positivos: ~20%
-```
+```bash
 
 #### Depois (40 regras otimizadas)
-```
+
+```bash
 Tempo: 45-60 segundos  ⚡⚡⚡ 75% mais rápido!
 Memória: ~300MB        📉 40% menos memória
 Falsos positivos: ~5%  📊 Mais precisão
-```
+```bash
 
 **Regras removidas/reduzidas:**
+
 - ❌ LongVariable, ShortVariable (naming preferences)
 - ❌ Cyclomatic/NPAth complexidade (relaxado)
 - ❌ ExcessiveClassLength (aumentado para 750 linhas)
 - ❌ ExcessiveMethodLength (aumentado para 150 linhas)
 
 **Mantidas (críticas):**
+
 - ✅ Performance rules (String concat, loops)
 - ✅ Security rules (SQL injection, XSS)
 - ✅ Error-prone (nullpointers, resource leaks)
@@ -137,16 +150,19 @@ Checkstyle já é rápido (~10 segundos). Mantida configuração atual.
 ## 🎯 Recomendações
 
 ### Imediatas
+
 1. ✅ Teste os novos benchmarks localmente
 2. ✅ Execute o pipeline otimizado em PR
 3. ✅ Monitore tempos de execução
 
 ### Curto prazo
+
 - [ ] Aumentar workers paralelos se houver mais testes
 - [ ] Considerar splitting de análise (PMD + SpotBugs em jobs separados)
 - [ ] Cachear results de análise entre PRs da mesma branch
 
 ### Longo prazo
+
 - [ ] Migrar para GitHub Enterprise runners (mais potentes)
 - [ ] Implementar incremental analysis
 - [ ] Adicionar SonarQube para análise consolidada
@@ -156,16 +172,19 @@ Checkstyle já é rápido (~10 segundos). Mantida configuração atual.
 ## 🔍 Como Verificar as Melhorias
 
 ### Localmente
+
 ```bash
 # Build com otimizações ativas
 time ./mvnw clean verify
 
 # Benchmarks novos
 mvn -DskipTests=true jmh:benchmark
-```
+```bash
 
 ### CI/CD
+
 Verificar tempo na aba "Workflow runs" do GitHub Actions:
+
 - Antes: 10-15 minutos
 - Depois: 5-8 minutos (esperado)
 
