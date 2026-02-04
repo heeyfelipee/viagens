@@ -1,0 +1,49 @@
+# Markdownlint Configuration - Viagens Project
+# 🎯 Configuração otimizada para suportar emoticons e flexibilidade criativa
+---
+# Allow longer lines for tables, code e README criativo
+MD013:
+  line_length: 1000
+  code_block_line_length: 1000
+  code_blocks: true
+  headers: true
+  headers_line_length: 1000
+  tables: true
+  url: true
+
+# Accept Portuguese special characters in links
+MD051: false
+
+# Don't enforce emphasis style (permite criatividade)
+MD036: false
+
+# Allow spaces in emphasis
+MD037: false
+
+# Allow specific list indentation
+MD007: false
+
+# Allow inconsistent indentation
+MD005: false
+
+# Allow list item spacing
+MD032: false
+
+# Allow trailing spaces
+MD009: false
+
+# 🎨 EMOTICONS & CRIATIVIDADE - Regras relaxadas
+MD018: false  # No space after hash on atx style heading
+MD019: false  # Multiple spaces after hash on atx style heading
+MD020: false  # No space inside hashes on closed atx style heading
+MD021: false  # Multiple spaces inside hashes on closed atx style heading
+MD022: false  # Blanks around headings
+MD026: false  # Trailing punctuation in heading
+MD031: false  # Fenced code blocks without blank lines
+MD033: false  # Inline HTML
+MD040: false  # Fenced code blocks need language specified
+MD010: false  # No hard tabs
+MD012: false  # Multiple blank lines
+
+# Report other errors
+default: true

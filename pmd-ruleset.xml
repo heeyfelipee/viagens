@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="viagens-pmd-rules" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>Optimized PMD ruleset for viagens - performance-focused analysis</description>
+
+    <!-- Best Practices (select high-impact rules only) -->
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="UseVarargs"/>
+        <exclude name="GuardLogStatement"/>
+        <exclude name="PreserveStackTrace"/>
+        <exclude name="AccessorMethodGeneration"/>
+        <exclude name="ArrayIsStoredDirectly"/>
+        <exclude name="UseCollectionIsEmpty"/>
+    </rule>
+
+    <!-- Code Style & Maintainability (reduced set for performance) -->
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="LongVariable"/>
+        <exclude name="ShortVariable"/>
+        <exclude name="ShortMethodName"/>
+        <exclude name="VariableNamingConventions"/>
+        <exclude name="MethodNamingConventions"/>
+        <exclude name="FieldNamingConventions"/>
+        <exclude name="ClassNamingConventions"/>
+        <exclude name="PackageNamingConventions"/>
+    </rule>
+
+    <!-- Design Flaws (critical only) -->
+    <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/>
+        <exclude name="CognitiveComplexity"/>
+        <exclude name="DataClass"/>
+        <exclude name="UseUtilityClass"/>
+        <exclude name="CyclomaticComplexity"/>
+        <exclude name="ExcessiveClassLength"/>
+        <exclude name="ExcessiveMethodLength"/>
+    </rule>
+
+    <!-- Error Prone (all) -->
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="MissingStaticMethodInNonInstantiatableClass"/>
+        <exclude name="BeanMembersShouldSerialize"/>
+        <exclude name="NullAssignment"/>
+        <exclude name="AssignmentInOperand"/>
+    </rule>
+
+    <!-- Multi-threading (critical only) -->
+    <rule ref="category/java/multithreading.xml">
+        <exclude name="UseConcurrentHashMap"/>
+        <exclude name="DoubleCheckedLocking"/>
+    </rule>
+
+    <!-- Performance Rules (ALL - critical for optimization) -->
+    <rule ref="category/java/performance.xml"/>
+
+    <!-- Security Rules (ALL - critical for safety) -->
+    <rule ref="category/java/security.xml"/>
+
+    <!-- Custom performance thresholds -->
+    <rule ref="category/java/design.xml/ExcessiveMethodLength">
+        <properties>
+            <property name="minimum" value="150"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/ExcessiveClassLength">
+        <properties>
+            <property name="minimum" value="750"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/NPathComplexity">
+        <properties>
+            <property name="reportLevel" value="250"/>
+        </properties>
+    </rule>
+
+</ruleset>

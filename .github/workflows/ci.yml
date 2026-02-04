@@ -1,0 +1,134 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, 'appmod/**' ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        java-version: [21]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java-version }}
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install markdownlint CLI
+        run: |
+          npm ci
+
+      - name: Run markdownlint
+        run: |
+          npx markdownlint-cli "**/*.md" --ignore node_modules || true
+
+      - name: Build and run tests
+        run: |
+          mvn -B -V -DskipTests=false verify
+
+      - name: Upload spotbugs report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spotbugs-report
+          path: target/spotbugsXml.xml
+
+  analysis:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 for analysis
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Run PMD and SpotBugs (JDK17)
+        run: |
+          mvn -B -DskipTests=true -Dspotbugs.skip=false -Dpmd.skip=false -Dpmd.failOnViolation=true -Dspotbugs.failOnError=true verify
+
+      - name: Upload PMD report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pmd-report
+          path: target/pmd.xml
+
+      - name: Upload spotbugs report (analysis)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spotbugs-report-analysis
+          path: target/spotbugsXml.xml
+
+  quality:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Spotless check (fail on unformatted)
+        run: |
+          mvn -B com.diffplug.spotless:spotless-maven-plugin:2.39.0:check
+
+      - name: Checkstyle check (fail on violations)
+        run: |
+          mvn -B checkstyle:check
+
+      - name: Upload checkstyle result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkstyle-result
+          path: target/checkstyle-result.xml
