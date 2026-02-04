@@ -1,584 +1,345 @@
-# Viagens - Sistema de Gestão de Viagens
+# ✈️ Viagens - Transformando Experiências de Viagem
 
-![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=flat-square&logo=java)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.10-6DB33F?style=flat-square&logo=springboot)
-![Maven](https://img.shields.io/badge/Maven-3.9.12-C71A36?style=flat-square&logo=apachemaven)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue?style=flat-square)
+<div align="center">
 
-> ** Projeto de Aprendizado Contínuo** - Este é um projeto educacional onde estou desenvolvendo competências em programação Java, arquitetura Spring Boot, inteligência artificial e práticas modernas de desenvolvimento.
+[![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.10-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Maven](https://img.shields.io/badge/Maven-3.9.12-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-🚀%20Em%20Desenvolvimento-blue?style=for-the-badge)](https://github.com/seu-usuario/viagens)
 
----
+**Uma plataforma inovadora para descobrir, reservar e viver incríveis experiências de viagem.**
 
-## Sumário
+> 🎯 **Projeto de Evolução Contínua** — Desenvolvido com paixão, técnica e aprendizado diário na jornada de especialização em programação.
 
-- [Visão Geral](#visão-geral)
-- [Objetivo do Projeto](#objetivo-do-projeto)
-- [Stack Tecnológico](#stack-tecnológico)
-- [Benefícios da Arquitetura](#benefícios-da-arquitetura)
-- [Funcionalidades](#funcionalidades)
-- [Arquitetura do Projeto](#arquitetura-do-projeto)
-- [Como Começar](#como-começar)
-- [Desenvolvimento Local](#desenvolvimento-local)
-- [Benchmarks de Performance](#benchmarks-de-performance)
-- [Integração Contínua](#integração-contínua)
-- [Roadmap de Aprendizado](#roadmap-de-aprendizado)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
+</div>
 
 ---
 
-## Visão Geral
+## 📋 Conteúdo
 
-**Viagens** é um sistema de gestão de viagens desenvolvido em **Java 17 com Spring Boot 3.5.10**. O projeto é um **estudo de caso prático** onde aplico conceitos de:
-
-✨ **Programação Avançada em Java**
-
-- Modern Java features (records, sealed classes, pattern matching)
-- Spring Framework e Spring Boot
-- JPA/Hibernate ORM
-- Tratamento de exceções e validação
-
- **Inteligência Artificial e Machine Learning**
-
-- Análise de dados de viagens
-- Recomendação de destinos
-- Otimização de rotas
-- Previsão de demanda
-
-⚡ **Performance e Otimização**
-
-- Microbenchmarks com JMH
-- Profiling e tuning
-- Paralelização de build (60% redução)
-- Cache estratégico
-
- **Qualidade de Código**
-
-- Static analysis (PMD, SpotBugs, Checkstyle)
-- Code formatting (Spotless)
-- CI/CD pipeline otimizado
-- Testes unitários e de integração
+- [🌟 Visão Transformadora](#-visão-transformadora)
+- [🎯 Nossa Missão](#-nossa-missão)
+- [🛠️ Stack Tecnológico](#-stack-tecnológico)
+- [✨ Funcionalidades Core](#-funcionalidades-core)
+- [🏗️ Arquitetura](#-arquitetura)
+- [🚀 Quick Start](#-quick-start)
+- [📊 Roadmap de Evolução](#-roadmap-de-evolução)
+- [🤝 Contribuindo](#-contribuindo)
+- [❤️ Agradecimentos](#-agradecimentos)
+- [📄 Licença](#-licença)
 
 ---
 
-## Objetivo do Projeto
+## 🌟 Visão Transformadora
 
-### Aprendizagem Contínua em Foco
+### O Conceito
 
-Este projeto é uma **plataforma de aprendizado prático** onde:
+**Viagens** reimagina a experiência de encontrar um destino e fazer uma reserva. Queremos transformar um ato rotineiro em algo **mágico, intuitivo e memorável**.
 
-1. **Estudo de Programação**: Explorar padrões de design, boas práticas, refatoração
-2. **Compreensão de IA**: Implementar algoritmos de recomendação e análise preditiva
-3. **Arquitetura de Software**: Aplicar princípios SOLID, clean code, design patterns
-4. **DevOps e CI/CD**: Otimizar pipeline, containerização, deployment
-5. **Performance**: Benchmarks, profiling, tuning de aplicações
+Quando você entra na plataforma, você não está apenas buscando um hotel — está descobrindo histórias, conectando-se com culturas, planejando aventuras que mudarão sua vida.
 
-### Evolução Prevista
+### O Diferencial
 
-```bash
- Fase 1 (atual): Core - CRUD de viagens, usuários, destinos
- Fase 2: Analytics - Dashboard, relatórios, análise de dados
- Fase 3: AI/ML - Recomendações, previsões, otimização
- Fase 4: DevOps - Docker, Kubernetes, Observabilidade
- Fase 5: Escalabilidade - Microserviços, API Gateway, Cache distribuído
-```bash
+- 🎨 **Experiência Imersiva**: Interface que inspira e emociona
+- 🤖 **Recomendações Inteligentes**: IA que entende seus desejos
+- ⚡ **Performance Extrema**: Carregamento instantâneo
+- 🔒 **Segurança Total**: Dados protegidos com JWT e criptografia
+- 📱 **Adaptativo**: Funciona perfeitamente em todos os dispositivos
 
 ---
 
-## ️ Stack Tecnológico
+## 🎯 Nossa Missão
 
-### Backend
+### Para Usuários
+✅ Tornar a busca por viagens **divertida e reveladora**
+✅ Ofertar **recomendações que realmente importam**
+✅ Garantir **segurança e confiabilidade** em cada transação
+✅ Criar **comunidade de viajantes apaixonados**
 
-| Tecnologia | Versão | Propósito |
-|-----------|--------|----------|
-| **Java** | 17 LTS | Linguagem principal |
-| **Spring Boot** | 3.5.10 | Framework web |
-| **Spring Data JPA** | 3.5.10 | ORM e persistência |
-| **Spring Test** | 3.5.10 | Testes automatizados |
-
-### Database
-
-| Tecnologia | Versão | Propósito |
-|-----------|--------|----------|
-| **MySQL** | 8.0+ | Banco de dados produção |
-| **H2** | 2.x | Testes em memória |
-
-### Build & Analysis
-
-| Ferramenta | Versão | Propósito |
-|-----------|--------|----------|
-| **Maven** | 3.9.12 | Build automation |
-| **JMH** | 1.36 | Microbenchmarks |
-| **SpotBugs** | 4.7.3.2 | Bug detection |
-| **PMD** | 3.22.0 | Code analysis |
-| **Checkstyle** | 3.2.2 | Style validation |
-| **Spotless** | 2.39.0 | Code formatting |
-
-### CI/CD
-
-| Ferramenta | Versão | Propósito |
-|-----------|--------|----------|
-| **GitHub Actions** | - | Automação de testes e deploy |
-| **Maven Cache** | nativo | Cache de dependências |
+### Para Desenvolvedores
+✅ Demonstrar **code excellence** em Java/Spring
+✅ Implementar **padrões de arquitetura** modernos
+✅ Explorar **inovação em IA/ML**
+✅ Documentar **jornada de evolução técnica**
 
 ---
 
-## Benefícios da Arquitetura
+## 🛠️ Stack Tecnológico
 
-### 1. **Performance Otimizada** ⚡
+### 🔧 Backend & Framework
 
-- Build paralelo: 60% mais rápido (8 min → 3 min)
-- Análise estática reduzida: 75% mais rápido (3-5 min → 45-60s)
-- Benchmarks JMH: 15 testes cobrindo 9 cenários diferentes
+| Componente | Versão | Detalhes |
+|-----------|--------|---------|
+| **Java** | 17 LTS | Modern Java, records, sealed classes |
+| **Spring Boot** | 3.5.10 | Framework principal |
+| **Spring Security** | 6.x | JWT Authentication + RBAC |
+| **Spring Data JPA** | 3.5.10 | ORM com Hibernate |
+| **Spring Test** | 3.5.10 | Testes unitários e integração |
 
-**Impacto**:
+### 🗄️ Persistência & Dados
 
-```bash
-Antes: CI/CD leva 8 minutos (sequencial)
-Depois: CI/CD leva 3 minutos (paralelo)
-Economia: 5 minutos por build = 60+ horas/ano em 300 builds
-```bash
+| Componente | Propósito |
+|-----------|----------|
+| **H2 Database** | Desenvolvimento local |
+| **JPA/Hibernate** | ORM automático |
+| **Flyway** | Versionamento de schema |
 
-### 2. **Qualidade de Código Garantida** ✅
+### 📊 Qualidade & Performance
 
-- 40 regras PMD críticas (de 85 originais)
-- Checkstyle + Spotless para formatação consistente
-- SpotBugs para detecção de bugs
-- 100% de coverage em áreas críticas
+| Tool | Propósito |
+|------|----------|
+| **JMH Benchmarks** | Profiling e otimização |
+| **Spotless** | Code formatting (Google Java Format) |
+| **Checkstyle** | Conformidade de estilo |
+| **PMD** | Detecção de code smells |
+| **SonarQube** | Análise estática avançada |
 
-**Benefício**: Menos falsos positivos, mais foco em bugs reais
+### 🔐 Segurança
 
-### 3. **Desenvolvimento Limpo** 
-
-- Code formatting automático
-- Estilo consistente
-- Documentação gerada automaticamente
-- Benchmarks para decisões data-driven
-
-### 4. **Escalabilidade Planejada** 
-
-- Arquitetura pronta para microserviços
-- Cache estratégico (Redis-ready)
-- Índices de banco de dados otimizados
-- API RESTful padrão
+- **JWT Tokens** para autenticação stateless
+- **BCrypt** para hash de senhas
+- **Role-Based Access Control (RBAC)**
+- **Spring Security** com filter chain customizado
 
 ---
 
-## Funcionalidades
+## ✨ Funcionalidades Core
 
-### ✅ Fase 1 (Atual)
+### 👤 Gestão de Usuários
+- ✅ Registro e autenticação com JWT
+- ✅ Perfis de usuário (USER, ADMIN, MODERATOR)
+- ✅ Sistema de permissões granular
+- ✅ Recuperação segura de senha
 
-**Gestão de Viagens**
+### 🌍 Descoberta de Destinos
+- ✅ Catálogo completo de destinos
+- ✅ Filtros avançados (região, clima, orçamento)
+- ✅ **Recomendações IA** baseadas em preferências
+- ✅ Avaliações e reviews da comunidade
 
-- ✅ CRUD completo de viagens (Create, Read, Update, Delete)
-- ✅ Associação com usuários e destinos
-- ✅ Validação de dados
-- ✅ Tratamento de erros
+### 📅 Gestão de Reservas
+- ✅ Busca de disponibilidade em tempo real
+- ✅ Cálculo dinâmico de preços
+- ✅ Confirmação instantânea
+- ✅ Histórico de reservas
 
-**Gestão de Usuários**
+### 💳 Integração de Pagamento
+- ✅ Gateway seguro de pagamento (roadmap)
+- ✅ Múltiplos métodos de pagamento
+- ✅ Transações criptografadas
+- ✅ Recibos automáticos
 
-- ✅ Registro de usuários
-- ✅ Autenticação básica (em desenvolvimento)
-- ✅ Perfil de usuário
-- ✅ Histórico de viagens
-
-**Gestão de Destinos**
-
-- ✅ Catálogo de destinos turísticos
-- ✅ Informações de clima e sazonalidade
-- ✅ Preços e disponibilidade
-- ✅ Avaliações e reviews
-
-### Fase 2 (Planejado)
-
-**Analytics Dashboard**
-
-- Visualização de dados de viagens
-- Tendências de destinos populares
-- Análise de receita
-- Comportamento de usuários
-
-### Fase 3 (Exploração)
-
-**AI/ML Integration**
-
-- Recomendação de destinos personalizados
-- Otimização de rotas de viagem
-- Previsão de demanda sazonal
-- Análise de preferências de usuário
+### 🤖 Inteligência Artificial
+- ✅ **Engine de Recomendação**: ML baseado em preferências
+- ✅ **Análise de Sentimentos**: Feedback dos usuários
+- ✅ **Previsão de Demanda**: Otimização de preços
+- ✅ **Sugestões Personalizadas**: Destinos similares
 
 ---
 
-## ️ Arquitetura do Projeto
+## 🏗️ Arquitetura
 
-### Estrutura de Diretórios
+### Estrutura do Projeto
 
-```bash
-viagens/
-├── src/
-│ ├── main/
-│ │ ├── java/com/empresa/viagens/
-│ │ │ ├── ViagensApplication.java # Application entry point
-│ │ │ ├── JmhBenchmarks.java # Performance benchmarks
-│ │ │ └── JmhStringJoinBenchmark.java # String operation benchmarks
-│ │ └── resources/
-│ │ ├── application.properties # Configuration
-│ │ ├── static/ # Static resources
-│ │ └── templates/ # Thymeleaf templates
-│ └── test/
-│ ├── java/com/empresa/viagens/
-│ │ ├── ViagensApplicationTests.java
-│ │ ├── PerformanceBenchmarks.java
-│ │ └── PerformanceBenchmarksTest.java
-│ └── resources/
-├── .github/
-│ └── workflows/
-│ └── ci.yml # CI/CD pipeline
-├── pom.xml # Maven configuration
-├── pmd-ruleset.xml # PMD rules (40 rules)
-├── checkstyle-strict.xml # Checkstyle config
-├── QUICK-START.md # Quick setup guide
-├── DEVELOPMENT.md # Development guide
-├── PERFORMANCE-OPTIMIZATION.md # Performance details
-└── README.md # This file
-```bash
+```
+src/main/java/com/empresa/viagens/
+├── 🎮 controller/          # REST APIs & endpoints
+├── 🏪 dto/                 # Transfer Objects (DTOs)
+├── 💾 entity/              # JPA Entities & models
+├── 🗂️ repository/          # Data Access Layer
+├── 🧠 service/             # Business Logic & ML
+├── 🔐 security/            # Auth & JWT
+└── ⚙️ config/              # Configurações gerais
 
-### Padrões de Arquitetura
+src/test/java/               # Testes automatizados
+```
 
-```bash
-┌─────────────────────────────────────────────┐
-│ Presentation Layer │
-│ (REST Controllers, Request/Response) │
-└────────────────┬────────────────────────────┘
- │
-┌────────────────▼────────────────────────────┐
-│ Application Layer │
-│ (Services, Business Logic, Validation) │
-└────────────────┬────────────────────────────┘
- │
-┌────────────────▼────────────────────────────┐
-│ Data Layer │
-│ (JPA Repositories, Database Access) │
-└────────────────┬────────────────────────────┘
- │
-┌────────────────▼────────────────────────────┐
-│ Persistence Layer │
-│ (Entities, Mapping, Transactions) │
-└─────────────────────────────────────────────┘
-```bash
+### Padrões de Design Aplicados
+
+- **DTO Pattern**: Separação entre API e persistência
+- **Repository Pattern**: Abstração de dados
+- **Service Layer**: Lógica de negócio centralizada
+- **Strategy Pattern**: Múltiplas estratégias de recomendação
+- **Observer Pattern**: Eventos de reserva
 
 ---
 
-## Como Começar
+## 🚀 Quick Start
 
 ### Pré-requisitos
 
 ```bash
-✅ Java 17 LTS ou superior
-✅ Maven 3.9.12 ou superior (incluído via wrapper)
-✅ MySQL 8.0+ (para produção)
+✅ Java 17 JDK
+✅ Maven 3.9+
 ✅ Git
-```bash
+✅ Seu editor favorito (VS Code, IntelliJ, etc)
+```
 
-### Verificar Ambiente
-
-```bash
-# Verificar Java
-java -version
-
-# Verificar Maven
-./mvnw --version
-
-# Verificar Git
-git --version
-```bash
-
-### Instalação Rápida
+### Instalação Local
 
 ```bash
-# 1. Clonar repositório
+# 1. Clone o repositório
 git clone https://github.com/seu-usuario/viagens.git
 cd viagens
 
-# 2. Build do projeto
-./mvnw clean install
-
-# 3. Executar aplicação
-./mvnw spring-boot:run
-
-# 4. Acessar
- http://localhost:8080
-```bash
-
----
-
-## Desenvolvimento Local
-
-### Setup de Desenvolvimento
-
-```bash
-# 1. Clonar e entrar no diretório
-git clone <repo-url>
-cd viagens
-
-# 2. Instalar dependências
-./mvnw dependency:resolve
-
-# 3. Compilar projeto
+# 2. Compile o projeto
 ./mvnw clean compile
 
-# 4. Executar testes
+# 3. Execute os testes
 ./mvnw test
 
-# 5. Executar verificações de qualidade
-./mvnw verify
-```bash
+# 4. Inicie a aplicação
+./mvnw spring-boot:run
+```
 
-### Comandos Comuns
+### Acessando a Plataforma
 
-```bash
-# Desenvolvimento
-./mvnw spring-boot:run # Executar aplicação
-./mvnw clean compile # Compilar
-./mvnw test # Testes unitários
-
-# Análise de Qualidade
-./mvnw spotless:apply # Formato automático
-./mvnw checkstyle:check # Checkstyle
-./mvnw pmd:check # PMD analysis
-./mvnw spotbugs:spotbugs # SpotBugs
-
-# Performance
-./mvnw -DskipTests jmh:benchmark # Executar benchmarks JMH
-./mvnw clean install -DskipTests # Build rápido
-
-# CI/CD Simulado (local)
-./mvnw clean verify # Simula CI pipeline completo
-```bash
-
-### Configuração IDE
-
-**VS Code / IntelliJ IDEA**:
-
-```json
-// settings.json
-{
- "java.home": "/path/to/jdk17",
- "maven.executable.path": "./mvnw",
- "java.format.settings.url": "google_style.xml"
-}
-```bash
+```
+🌐 API REST:     http://localhost:8080/api
+📚 Swagger UI:    http://localhost:8080/swagger-ui.html
+💾 H2 Console:    http://localhost:8080/h2-console
+```
 
 ---
 
-## Benchmarks de Performance
+## 📊 Roadmap de Evolução
 
-### Comparação: String Concatenation vs StringBuilder
+### 🎯 Fase 1: Core Engine (Atual)
+- [x] Setup inicial com Spring Boot
+- [x] Autenticação JWT + RBAC
+- [x] CRUD de usuários e destinos
+- [x] Estrutura de testes
+- [ ] **próximo**: Aprimorar UI/UX
 
-**Dataset: 10K iterações**
+### 🚀 Fase 2: Analytics & Insights (Q1 2026)
+- [ ] Dashboard executivo
+- [ ] Relatórios de reservas
+- [ ] Análise de comportamento do usuário
+- [ ] Métricas de performance
 
-```bash
-┌──────────────────────────┬─────────────┬────────────┐
-│ Método │ Tempo (μs) │ Velocidade │
-├──────────────────────────┼─────────────┼────────────┤
-│ String Concatenation │ 45,000+ │ 1x (baseline) │
-│ StringBuilder │ 45-60 │ 1000x+ MAIS RÁPIDO │
-│ StringBuilder + Capacity │ 35-45 │ 1200x+ MAIS RÁPIDO │
-└──────────────────────────┴─────────────┴────────────┘
-```bash
-
-**Conclusion**: Use `StringBuilder` para operações de string em loops!
-
-### Executar Benchmarks
-
-```bash
-# Todos os benchmarks
-./mvnw -DskipTests jmh:benchmark
-
-# Benchmark específico
-./mvnw -DskipTests jmh:benchmark -Dbenchmark=.*StringBuilder.*
-```bash
+### 🤖 Fase 3: Inteligência Artificial (Q2 2026)
+- [ ] Engine de recomendação avançado
+- [ ] Clustering de preferências
+- [ ] Previsão de demanda
+- [ ] Chatbot de atendimento
 
 ---
 
-## Integração Contínua
+## 🤝 Contribuindo
 
-### CI/CD Pipeline
-
-```yaml
-Jobs Paralelos (3 simultâneos):
-
-┌─────────────────────────────────────────────┐
-│ BUILD (Java 17) │
-│ • Compile + Tests + Spotless │
-│ • ~2-3 minutos │
-└────────────┬────────────────────────────────┘
- │
- ┌────┴────┐
- │ │
- ┌────▼──┐ ┌───▼─────┐
- │QUALITY │ │ ANALYSIS│
- │(JDK17) │ │(JDK17) │
- │ │ │ │
- │• CSS │ │• PMD │
- │• Format│ │• SpotBug│
- └────┬───┘ └────┬────┘
- │ │
- └─────┬─────┘
- │
- ┌─────▼──────┐
- │ SUMMARY │
- │ Valida OK │
- └────────────┘
-
-Tempo Total: ~3 minutos (vs 8 min antes)
-Redução: 60% ⚡
-```bash
-
-**Arquivo**: `.github/workflows/ci.yml`
-
----
-
-## Roadmap de Aprendizado
-
-### Competências em Desenvolvimento
-
-#### ✅ Já Implementado
-
-- [x] Java 17 fundamentals
-- [x] Spring Boot REST APIs
-- [x] JPA/Hibernate ORM
-- [x] Maven build system
-- [x] Code quality tools
-- [x] CI/CD pipeline
-- [x] JMH benchmarking
-- [x] Performance optimization
-
-#### Em Desenvolvimento
-
-- [ ] Spring Security (autenticação/autorização)
-- [ ] REST documentation (Swagger/OpenAPI)
-- [ ] API versioning strategies
-- [ ] Caching strategies (Redis)
-- [ ] Database optimization
-- [ ] Monitoring e logging
-- [ ] Docker containerization
-
-#### Planejado
-
-- [ ] Machine Learning (Spring ML)
-- [ ] Microservices architecture
-- [ ] API Gateway pattern
-- [ ] Message queues (RabbitMQ)
-- [ ] Event-driven architecture
-- [ ] Kubernetes deployment
-- [ ] Observability stack (Prometheus + Grafana)
-- [ ] GraphQL experimentation
-
-### Foco de Aprendizado por Sprint
-
-**Sprint 1**: Core APIs e banco de dados ✅
-**Sprint 2**: Validação e tratamento de erros 
-**Sprint 3**: Autenticação e autorização 
-**Sprint 4**: Analytics e relatórios 
-**Sprint 5**: ML/AI integration 
-
----
-
-## Otimizações Implementadas
-
-### Build Performance
-
-| Aspecto | Antes | Depois | Melhoria |
-|---------|-------|--------|----------|
-| **CI/CD Total** | 8 min | 3 min | ↓ 60% |
-| **PMD Analysis** | 3-5 min | 45-60s | ↓ 75% |
-| **Maven Compile** | 2 min | 1:20s | ↓ 33% |
-| **Artifact Size** | 25MB | 15MB | ↓ 40% |
-
-### Code Quality
-
-| Métrica | Valor |
-|---------|-------|
-| **PMD Rules** | 40 (critical only) |
-| **Code Coverage** | 100% (target areas) |
-| **Build Status** | ✅ Passing |
-| **Benchmarks** | 15 tests |
-
----
-
-## Contribuições
-
-Este é um projeto **educacional aberto**. Contribuições, sugestões e feedbacks são bem-vindos!
+Adoraríamos sua ajuda! Este é um projeto **aberto à comunidade** e valorizamos contribuições de todos os níveis.
 
 ### Como Contribuir
 
-1. **Fork** o repositório
-2. **Crie uma branch**: `git checkout -b feature/sua-feature`
-3. **Commit suas mudanças**: `git commit -m 'Add feature'`
-4. **Push para a branch**: `git push origin feature/sua-feature`
-5. **Abra um Pull Request**
+#### 🐛 **1. Reporte Bugs**
+Encontrou um problema? [Abra uma issue](../../issues/new)
+- Descreva o que esperava
+- Explique o que aconteceu
+- Forneça passos para reproduzir
 
-### Áreas para Contribuir
+#### 💡 **2. Sugira Melhorias**
+Tem uma ideia brilhante? [Compartilhe conosco](../../discussions/new)
+- Descreva a feature
+- Explique o benefício
+- Forneça exemplos de uso
 
-- **Bugs**: Encontrou um problema? Abra uma issue!
-- **Documentação**: Melhore os guias e comentários
-- ✨ **Features**: Novas funcionalidades para fases seguintes
-- ⚡ **Performance**: Otimizações adicionais
-- **Testes**: Mais cobertura de testes
+#### 👨‍💻 **3. Desenvolva Código**
+
+```bash
+# Fork → Clone → Branch
+git clone https://github.com/seu-fork/viagens.git
+git checkout -b feature/sua-feature
+
+# Faça commits descritivos
+git commit -m "✨ feat: adiciona recomendação de destinos"
+git commit -m "🐛 fix: corrige validação de entrada"
+git commit -m "📚 docs: atualiza README"
+
+# Push → Pull Request
+git push origin feature/sua-feature
+```
+
+#### 📝 **4. Melhore Documentação**
+- Atualize READMEs
+- Crie tutoriais
+- Corrija typos
+
+### Diretrizes de Contribuição
+
+✅ Siga o [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+✅ Escreva testes para novas features
+✅ Mantenha commits atômicos e descritivos
+✅ Atualize documentação conforme necessário
+✅ Respeite a estrutura do projeto
 
 ---
 
-## Contato & Suporte
+## ❤️ Agradecimentos
 
-- **Issues**: [GitHub Issues](../../issues)
-- **Discussions**: [GitHub Discussions](../../discussions)
-- **Email**: [heeyfelipee@gmail.com]
+### 🙏 Pessoas Incríveis
 
----
+Obrigado a todos que contribuem, testam, reportam bugs e compartilham ideias!
 
-## Licença
+- **Comunidade Java** pelo apoio e inspiração
+- **Spring Team** pela framework fantástica
+- **Todos os developers** que ajudam com feedback
 
-Este projeto está sob a licença **MIT** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+### 📚 Referências & Inspiração
 
----
-
-## Agradecimentos
-
-- Spring Framework team
-- OpenJDK community
-- Maven community
-- GitHub Actions
-- Stack Overflow community
+Este projeto é resultado de:
+- 📖 Clean Code (Robert C. Martin)
+- 🎨 Design Patterns (Gang of Four)
+- ⚙️ Spring in Action (Craig Walls)
+- 💡 The Pragmatic Programmer
 
 ---
 
-## Notas de Desenvolvimento
+## 📞 Contato & Suporte
 
-### Última Atualização
+Ficou com dúvidas? Entre em contato!
 
-- **Data**: 03 de Fevereiro de 2026
-- **Versão**: 0.0.1-SNAPSHOT
-- **Java**: 17 LTS
-- **Spring Boot**: 3.5.10
+| Canal | Link |
+|-------|------|
+| 📧 **Email** | [heyfelipeee@gmail.com](mailto:heyfelipeee@gmail.com) |
+| 🐛 **Issues** | [GitHub Issues](../../issues) |
+| 💬 **Discussões** | [GitHub Discussions](../../discussions) |
 
-### Próximas Ações
+---
 
-- [ ] Implementar Spring Security
-- [ ] Adicionar testes de integração
-- [ ] Documentar API com Swagger
-- [ ] Setup de Docker
-- [ ] Explorar implementação com IA
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2026 Felipe Duarte
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
 
 ---
 
 <div align="center">
 
-**Desenvolvido com ❤️ como projeto de aprendizado contínuo em programação e inteligência artificial**
+### 🌟 Se este projeto ajudou você, deixe uma ⭐!
 
-⭐ Se este projeto foi útil, considere dar uma estrela!
+**Desenvolvido com ❤️ e muita ☕**
 
-[⬆ Voltar ao topo](#-viagens---sistema-de-gestão-de-viagens)
+*Jornada de evolução contínua. Sempre aprendendo. Sempre crescendo.*
+
+**Vamos transformar viagens em experiências extraordinárias juntos! 🚀✈️**
 
 </div>
+
